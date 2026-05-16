@@ -50,10 +50,10 @@ const Navbar = () => {
     return (
         <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "py-2" : "py-4"}`}>
             <div className="max-w-7xl mx-auto px-4 md:px-6">
-                <div className={`grid grid-cols-3 items-center py-2 px-4 md:px-6 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md rounded-full shadow-lg border border-rose-100 dark:border-gray-800 transition-all ${scrolled ? "shadow-xl" : ""}`}>
+                <div className={`flex items-center justify-between py-2 px-4 md:px-6 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md rounded-full shadow-lg border border-rose-100 dark:border-gray-800 transition-all ${scrolled ? "shadow-xl" : ""}`}>
                     
-                    {/* Left: Hamburger (Mobile) / Desktop Links */}
-                    <div className="flex items-center">
+                    {/* Left Section: Mobile Menu Trigger & Desktop Logo */}
+                    <div className="flex items-center flex-1 lg:flex-none">
                         <button
                             onClick={() => setMenuOpen(!menuOpen)}
                             className="lg:hidden p-3 hover:bg-rose-50 dark:hover:bg-rose-900/10 rounded-2xl transition-all text-rose-600"
@@ -61,9 +61,32 @@ const Navbar = () => {
                         >
                             {menuOpen ? <X size={24} strokeWidth={3} /> : <Menu size={24} strokeWidth={3} />}
                         </button>
-                        
+
+                        <Link to="/" onClick={closeMenu} className="hidden lg:flex items-center gap-2 group transition-all">
+                            <div className="w-10 h-10 bg-rose-500 rounded-xl flex items-center justify-center shadow-lg shadow-rose-200 dark:shadow-none transition-transform group-hover:scale-110">
+                                <Droplets className="text-white" size={24} />
+                            </div>
+                            <h1 className="text-2xl font-black text-gray-900 dark:text-white tracking-tighter">
+                                RED<span className="text-rose-500">PULSE</span>
+                            </h1>
+                        </Link>
+                    </div>
+
+                    {/* Center Section: Mobile Logo & Desktop Links */}
+                    <div className="flex justify-center items-center flex-1 lg:flex-none">
+                        {/* Mobile Logo Only */}
+                        <Link to="/" onClick={closeMenu} className="lg:hidden flex items-center gap-2 group">
+                            <div className="w-9 h-9 bg-rose-500 rounded-xl flex items-center justify-center shadow-lg shadow-rose-200 dark:shadow-none">
+                                <Droplets className="text-white" size={20} />
+                            </div>
+                            <h1 className="text-xl font-black text-gray-900 dark:text-white tracking-tighter">
+                                RED<span className="text-rose-500">PULSE</span>
+                            </h1>
+                        </Link>
+
+                        {/* Desktop Links Only */}
                         <div className="hidden lg:flex items-center">
-                            <ul className="flex items-center gap-2 xl:gap-4">
+                            <ul className="flex items-center gap-2 xl:gap-8">
                                 <li onClick={closeMenu}>
                                     <MyLink to="/">Home</MyLink>
                                 </li>
@@ -82,20 +105,8 @@ const Navbar = () => {
                         </div>
                     </div>
 
-                    {/* Center: Logo (Always Centered for better mobile look) */}
-                    <div className="flex justify-center">
-                        <Link to="/" onClick={closeMenu} className="flex items-center gap-2 group">
-                            <div className="w-9 h-9 md:w-10 md:h-10 bg-rose-500 rounded-xl flex items-center justify-center shadow-lg shadow-rose-200 dark:shadow-none transition-transform group-hover:scale-110">
-                                <Droplets className="text-white" size={20} />
-                            </div>
-                            <h1 className="text-xl md:text-2xl font-black text-gray-900 dark:text-white tracking-tighter">
-                                RED<span className="text-rose-500">PULSE</span>
-                            </h1>
-                        </Link>
-                    </div>
-
-                    {/* Right: Theme Toggle & User Profile */}
-                    <div className="flex items-center justify-end gap-1 md:gap-4">
+                    {/* Right Section: Toggle & Profile */}
+                    <div className="flex items-center justify-end flex-1 lg:flex-none gap-1 md:gap-4">
                         <Motion.button 
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}

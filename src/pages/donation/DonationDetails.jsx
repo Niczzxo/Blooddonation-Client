@@ -60,7 +60,7 @@ const DonationDetails = () => {
 
     return (
         <div className="container mx-auto mt-20 py-20 px-4">
-            <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-2xl border border-rose-100 p-8">
+            <div className="max-w-3xl mx-auto bg-rose-50/50 dark:bg-gray-900 rounded-2xl shadow-2xl border border-rose-100 dark:border-gray-800 p-8">
                 <div>
                     <Link onClick={() => navigate(-1)} className=" text-rose-600 hover:text-rose-700 font-semibold flex items-center gap-2 text-lg">
                         ← Go Back
@@ -109,7 +109,7 @@ const DonationDetails = () => {
 
                     <div>
                         <p className="text-gray-600">Request Message</p>
-                        <p className="bg-gray-50 p-4 rounded-xl border">{request.request_message}</p>
+                        <p className="bg-rose-50/50 dark:bg-gray-800 p-4 rounded-xl border border-rose-100 dark:border-gray-700">{request.request_message}</p>
                     </div>
 
                     <div className="text-center pt-6">
@@ -140,25 +140,25 @@ const DonationDetails = () => {
             </div>
 
             {showModal && (
-                <div className="fixed inset-0 flex items-center justify-center z-50">
-                    <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full mx-4">
-                        <h3 className="text-2xl font-bold text-center mb-6">Confirm Your Donation</h3>
+                <div className="fixed inset-0 flex items-center justify-center z-50 p-4 bg-black/40 backdrop-blur-sm">
+                    <div className="bg-white dark:bg-gray-900 rounded-[2rem] shadow-2xl p-8 max-w-md w-full border border-rose-100 dark:border-gray-800">
+                        <h3 className="text-2xl font-black text-center mb-6 text-gray-900 dark:text-white uppercase tracking-tighter">Confirm Your Donation</h3>
                         <div className="space-y-4 text-center">
-                            <p className="text-lg">You are about to help save a life</p>
-                            <div className="bg-gray-50 p-4 rounded-xl">
-                                <p className="font-semibold">{user?.displayName}</p>
-                                <p className="text-gray-600">{user?.email}</p>
+                            <p className="text-lg font-medium text-gray-600 dark:text-gray-400">You are about to help save a life</p>
+                            <div className="bg-rose-50 dark:bg-gray-800 p-6 rounded-2xl border border-rose-100 dark:border-gray-700">
+                                <p className="font-bold text-xl text-gray-900 dark:text-white">{user?.displayName}</p>
+                                <p className="text-rose-600 font-medium">{user?.email}</p>
                             </div>
-                            <div className="flex gap-4 justify-center mt-6">
+                            <div className="flex gap-4 justify-center mt-8">
                                 <button
                                     onClick={handleDonate}
-                                    className="btn bg-green-600 hover:bg-green-700 text-white font-bold"
+                                    className="btn btn-lg bg-rose-600 hover:bg-rose-700 text-white font-bold border-none rounded-2xl shadow-lg shadow-rose-200 dark:shadow-none px-8"
                                 >
-                                    Yes, I Want to Donate
+                                    Yes, I'll Donate
                                 </button>
                                 <button
                                     onClick={() => setShowModal(false)}
-                                    className="btn bg-gray-500 hover:bg-gray-600 text-white"
+                                    className="btn btn-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 border-none rounded-2xl px-8"
                                 >
                                     Cancel
                                 </button>
