@@ -56,17 +56,17 @@ const DonationDetails = () => {
     };
 
     if (loading) return <Loading />;
-    if (!request) return <div className="text-center py-20 text-red-600">Request not found!</div>;
+    if (!request) return <div className="text-center py-20 text-rose-600">Request not found!</div>;
 
     return (
         <div className="container mx-auto mt-20 py-20 px-4">
-            <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-2xl border border-red-100 p-8">
+            <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-2xl border border-rose-100 p-8">
                 <div>
-                    <Link onClick={() => navigate(-1)} className=" text-red-600 hover:text-red-700 font-semibold flex items-center gap-2 text-lg">
+                    <Link onClick={() => navigate(-1)} className=" text-rose-600 hover:text-rose-700 font-semibold flex items-center gap-2 text-lg">
                         ← Go Back
                     </Link>
                 </div>
-                <h2 className="text-xl md:text-4xl font-bold text-center pb-3 my-5 text-red-600">Blood Donation Request</h2>
+                <h2 className="text-xl md:text-4xl font-bold text-center pb-3 my-5 text-rose-600">Blood Donation Request</h2>
 
                 <div className="space-y-6 text-lg">
                     <div className="grid md:grid-cols-2 gap-6">
@@ -76,7 +76,7 @@ const DonationDetails = () => {
                         </div>
                         <div>
                             <p className="text-gray-600">Blood Group</p>
-                            <p className="font-bold text-2xl text-red-600">{request.blood_group}</p>
+                            <p className="font-bold text-2xl text-rose-600">{request.blood_group}</p>
                         </div>
                     </div>
 
@@ -116,7 +116,7 @@ const DonationDetails = () => {
                         {request.donation_status === "pending" && (
                             <button
                                 onClick={() => setShowModal(true)}
-                                className="btn btn-lg bg-red-600 hover:bg-red-700 text-white rounded-full shadow-xl text-xl font-bold px-12"
+                                className="btn btn-lg bg-rose-600 hover:bg-rose-700 text-white rounded-full shadow-xl text-xl font-bold px-12"
                             >
                                 Donate Now
                             </button>

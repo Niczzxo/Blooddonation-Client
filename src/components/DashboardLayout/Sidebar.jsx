@@ -24,8 +24,8 @@ const Sidebar = () => {
     
     const navLinkStyles = ({ isActive }) =>
         `group flex items-center justify-between px-4 py-3 rounded-2xl transition-all duration-300 ${isActive
-            ? "bg-red-600 text-white shadow-lg shadow-red-200 dark:shadow-none font-bold scale-[1.02]"
-            : "text-gray-500 dark:text-gray-400 hover:bg-red-50 dark:hover:bg-gray-700 hover:text-red-600 font-medium"
+            ? "bg-rose-600 text-white shadow-lg shadow-rose-200 dark:shadow-none font-bold scale-[1.02]"
+            : "text-gray-500 dark:text-gray-400 hover:bg-rose-50 dark:hover:bg-gray-700 hover:text-rose-600 font-medium"
         }`;
 
     const closeSidebar = () => setOpen(false);
@@ -62,15 +62,15 @@ const Sidebar = () => {
             >
                 <div className="flex items-center justify-between mb-12">
                     <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-red-500 rounded-xl flex items-center justify-center shadow-lg shadow-red-200 dark:shadow-none animate-pulse">
+                        <div className="w-10 h-10 bg-rose-500 rounded-xl flex items-center justify-center shadow-lg shadow-rose-200 dark:shadow-none animate-pulse">
                             <Droplets className="text-white" size={24} />
                         </div>
                         <Link to="/" className="text-2xl font-black text-gray-900 dark:text-white tracking-tighter">
-                            RED<span className="text-red-500">PULSE</span>
+                            RED<span className="text-rose-500">PULSE</span>
                         </Link>
                     </div>
 
-                    <button onClick={closeSidebar} className="lg:hidden text-gray-400 hover:text-red-500 transition-colors">
+                    <button onClick={closeSidebar} className="lg:hidden text-gray-400 hover:text-rose-500 transition-colors">
                         <X size={24} strokeWidth={3} />
                     </button>
                 </div>
@@ -172,7 +172,7 @@ const Sidebar = () => {
 
                     <button 
                         onClick={handleLogOut} 
-                        className="w-full group flex items-center justify-between px-4 py-3 text-red-600 bg-red-50 dark:bg-red-900/20 hover:bg-red-100 dark:hover:bg-red-900/30 rounded-2xl transition-all duration-300 font-black tracking-tight"
+                        className="w-full group flex items-center justify-between px-4 py-3 text-rose-600 bg-rose-50 dark:bg-rose-900/20 hover:bg-rose-100 dark:hover:bg-rose-900/30 rounded-2xl transition-all duration-300 font-black tracking-tight"
                     >
                         <div className="flex items-center gap-3">
                             <LogOut size={20} />

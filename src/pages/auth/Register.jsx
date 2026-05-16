@@ -136,7 +136,7 @@ const Register = () => {
                     <div className="mb-8">
                         <button 
                             onClick={() => navigate(-1)} 
-                            className="bg-gray-50 dark:bg-gray-900 p-2 rounded-full text-red-600 hover:bg-red-50 transition-colors flex items-center justify-center w-10 h-10 shadow-sm"
+                            className="bg-gray-50 dark:bg-gray-900 p-2 rounded-full text-rose-600 hover:bg-rose-50 transition-colors flex items-center justify-center w-10 h-10 shadow-sm"
                         >
                             <ArrowLeft size={20} />
                         </button>
@@ -144,7 +144,7 @@ const Register = () => {
 
                     <div className="text-center mb-12">
                         <h1 className="text-4xl font-black text-gray-900 dark:text-white mb-2 tracking-tighter">
-                            JOIN OUR <span className="text-red-500 uppercase">Mission</span>
+                            JOIN OUR <span className="text-rose-500 uppercase">Mission</span>
                         </h1>
                         <p className="text-gray-500 dark:text-gray-400 font-medium tracking-tight">
                             Create an account to become a part of our life-saving community.
@@ -162,7 +162,7 @@ const Register = () => {
                                     className="absolute inset-0 opacity-0 cursor-pointer z-20"
                                     id="profile-photo"
                                 />
-                                <div className="w-32 h-32 rounded-full bg-gray-50 dark:bg-gray-900 border-4 border-dashed border-gray-200 dark:border-gray-700 flex items-center justify-center overflow-hidden shadow-inner transition-all group-hover:border-red-400">
+                                <div className="w-32 h-32 rounded-full bg-gray-50 dark:bg-gray-900 border-4 border-dashed border-gray-200 dark:border-gray-700 flex items-center justify-center overflow-hidden shadow-inner transition-all group-hover:border-rose-400">
                                     {imagePreview ? (
                                         <img
                                             src={imagePreview}
@@ -170,10 +170,10 @@ const Register = () => {
                                             className="w-full h-full object-cover"
                                         />
                                     ) : (
-                                        <Camera size={40} className="text-gray-300 group-hover:text-red-400 transition-colors" />
+                                        <Camera size={40} className="text-gray-300 group-hover:text-rose-400 transition-colors" />
                                     )}
                                 </div>
-                                <div className="absolute -bottom-2 -right-2 bg-red-600 text-white p-3 rounded-full shadow-lg pointer-events-none group-hover:scale-110 transition-transform">
+                                <div className="absolute -bottom-2 -right-2 bg-rose-600 text-white p-3 rounded-full shadow-lg pointer-events-none group-hover:scale-110 transition-transform">
                                     <Camera size={16} strokeWidth={3} />
                                 </div>
                             </div>
@@ -188,7 +188,7 @@ const Register = () => {
                                     name="name"
                                     required
                                     placeholder="John Doe"
-                                    className="input input-bordered w-full h-14 bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-2 focus:ring-red-500 transition-all font-semibold"
+                                    className="input input-bordered w-full h-14 bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-2 focus:ring-rose-500 transition-all font-semibold"
                                 />
                             </div>
                             <div className="space-y-2">
@@ -198,7 +198,7 @@ const Register = () => {
                                     name="email"
                                     required
                                     placeholder="hero@bloodcare.com"
-                                    className="input input-bordered w-full h-14 bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-2 focus:ring-red-500 transition-all font-semibold"
+                                    className="input input-bordered w-full h-14 bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-2 focus:ring-rose-500 transition-all font-semibold"
                                 />
                             </div>
                         </div>
@@ -208,7 +208,7 @@ const Register = () => {
                             <select 
                                 name="blood" 
                                 required
-                                className="select select-bordered w-full h-14 bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-2 focus:ring-red-500 transition-all font-bold"
+                                className="select select-bordered w-full h-14 bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-2 focus:ring-rose-500 transition-all font-bold"
                             >
                                 <option value="">Select blood group</option>
                                 <option value="A+">A+</option>
@@ -230,7 +230,7 @@ const Register = () => {
                                     onChange={(e) => setDistrict(e.target.value)} 
                                     name="district" 
                                     required
-                                    className="select select-bordered w-full h-14 bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-2 focus:ring-red-500 transition-all font-bold"
+                                    className="select select-bordered w-full h-14 bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-2 focus:ring-rose-500 transition-all font-bold"
                                 >
                                     <option value="">Select District</option>
                                     {districts.map(d => <option value={d.name} key={d.id} >{d.name}</option>)}
@@ -243,7 +243,7 @@ const Register = () => {
                                     onChange={(e) => setUpazila(e.target.value)} 
                                     name="upazila" 
                                     required
-                                    className="select select-bordered w-full h-14 bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-2 focus:ring-red-500 transition-all font-bold"
+                                    className="select select-bordered w-full h-14 bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-2 focus:ring-rose-500 transition-all font-bold"
                                 >
                                     <option value="">Select Upazila</option>
                                     {upazilas.map(upazila => <option value={upazila.name} key={upazila.id} >{upazila.name}</option>)}
@@ -259,12 +259,12 @@ const Register = () => {
                                     name="password"
                                     required
                                     placeholder="••••••••••"
-                                    className="input input-bordered w-full h-14 bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-2 focus:ring-red-500 transition-all font-semibold"
+                                    className="input input-bordered w-full h-14 bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-2 focus:ring-rose-500 transition-all font-semibold"
                                 />
                                 <button
                                     type="button"
                                     onClick={() => setShowPassword(!showPassword)}
-                                    className="absolute right-4 top-11 text-gray-400 hover:text-red-600 transition-colors"
+                                    className="absolute right-4 top-11 text-gray-400 hover:text-rose-600 transition-colors"
                                 >
                                     {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                                 </button>
@@ -276,12 +276,12 @@ const Register = () => {
                                     name="confirmPassword"
                                     required
                                     placeholder="••••••••••"
-                                    className="input input-bordered w-full h-14 bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-2 focus:ring-red-500 transition-all font-semibold"
+                                    className="input input-bordered w-full h-14 bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-2 focus:ring-rose-500 transition-all font-semibold"
                                 />
                                 <button
                                     type="button"
                                     onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                                    className="absolute right-4 top-11 text-gray-400 hover:text-red-600 transition-colors"
+                                    className="absolute right-4 top-11 text-gray-400 hover:text-rose-600 transition-colors"
                                 >
                                     {showConfirmPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                                 </button>
@@ -292,7 +292,7 @@ const Register = () => {
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
                             type="submit"
-                            className="btn btn-lg w-full bg-red-600 hover:bg-red-700 text-white border-none rounded-2xl shadow-xl shadow-red-200 dark:shadow-none transition-all h-14 font-black text-lg"
+                            className="btn btn-lg w-full bg-rose-600 hover:bg-rose-700 text-white border-none rounded-2xl shadow-xl shadow-rose-200 dark:shadow-none transition-all h-14 font-black text-lg"
                         >
                             Create Account
                         </Motion.button>
@@ -303,7 +303,7 @@ const Register = () => {
                             Already a hero? 
                             <Link
                                 to="/login"
-                                className="ml-2 font-black text-red-600 hover:text-red-700 underline underline-offset-4 transition"
+                                className="ml-2 font-black text-rose-600 hover:text-rose-700 underline underline-offset-4 transition"
                             >
                                 Login Here
                             </Link>

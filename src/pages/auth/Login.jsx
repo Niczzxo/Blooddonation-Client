@@ -39,7 +39,7 @@ const Login = () => {
                     <div className="mb-8">
                         <button 
                             onClick={() => navigate(-1)} 
-                            className="bg-gray-50 dark:bg-gray-900 p-2 rounded-full text-red-600 hover:bg-red-50 transition-colors flex items-center justify-center w-10 h-10 shadow-sm"
+                            className="bg-gray-50 dark:bg-gray-900 p-2 rounded-full text-rose-600 hover:bg-rose-50 transition-colors flex items-center justify-center w-10 h-10 shadow-sm"
                         >
                             <ArrowLeft size={20} />
                         </button>
@@ -47,7 +47,7 @@ const Login = () => {
 
                     <div className="text-center mb-10">
                         <h1 className="text-4xl font-black text-gray-900 dark:text-white mb-2 tracking-tighter">
-                            WELCOME <span className="text-red-500">BACK</span>
+                            WELCOME <span className="text-rose-500">BACK</span>
                         </h1>
                         <p className="text-gray-500 dark:text-gray-400 font-medium tracking-tight">
                             Every login is a step closer to saving a life.
@@ -62,14 +62,14 @@ const Login = () => {
                                 name="email"
                                 required
                                 placeholder="hero@bloodcare.com"
-                                className="input input-bordered w-full h-14 bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-2 focus:ring-red-500 transition-all font-semibold"
+                                className="input input-bordered w-full h-14 bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-2 focus:ring-rose-500 transition-all font-semibold"
                             />
                         </div>
 
                         <div className="space-y-2">
                             <div className="flex justify-between items-center px-1">
                                 <label className="text-xs font-black uppercase tracking-widest text-gray-400">Password</label>
-                                <button type="button" className="text-xs font-bold text-red-600 hover:underline">Forgot?</button>
+                                <button type="button" className="text-xs font-bold text-rose-600 hover:underline">Forgot?</button>
                             </div>
                             <div className="relative">
                                 <input
@@ -77,12 +77,12 @@ const Login = () => {
                                     name="password"
                                     required
                                     placeholder="••••••••••"
-                                    className="input input-bordered w-full h-14 bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-2 focus:ring-red-500 transition-all font-semibold"
+                                    className="input input-bordered w-full h-14 bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-2 focus:ring-rose-500 transition-all font-semibold"
                                 />
                                 <button
                                     type="button"
                                     onClick={() => setShowPassword(!showPassword)}
-                                    className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-red-600 transition-colors"
+                                    className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-rose-600 transition-colors"
                                 >
                                     {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                                 </button>
@@ -93,7 +93,7 @@ const Login = () => {
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
                             type="submit"
-                            className="btn btn-lg w-full bg-red-600 hover:bg-red-700 text-white border-none rounded-2xl shadow-xl shadow-red-200 dark:shadow-none transition-all h-14 font-black text-lg"
+                            className="btn btn-lg w-full bg-rose-600 hover:bg-rose-700 text-white border-none rounded-2xl shadow-xl shadow-rose-200 dark:shadow-none transition-all h-14 font-black text-lg"
                         >
                             Sign In
                         </Motion.button>
@@ -104,7 +104,7 @@ const Login = () => {
                             New to our community? 
                             <Link
                                 to="/register"
-                                className="ml-2 font-black text-red-600 hover:text-red-700 underline underline-offset-4 transition"
+                                className="ml-2 font-black text-rose-600 hover:text-rose-700 underline underline-offset-4 transition"
                             >
                                 Register Now
                             </Link>

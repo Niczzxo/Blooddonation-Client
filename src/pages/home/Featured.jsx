@@ -7,7 +7,7 @@ const FeaturesSection = () => {
     {
       title: "Support Our Campaigns",
       desc: "Join our ongoing initiatives to raise awareness and funds for critical medical needs in your local community.",
-      icon: <Users className="text-red-600" size={32} />,
+      icon: <Users className="text-rose-600" size={32} />,
       image: "https://images.unsplash.com/photo-1615461066159-fea0960485d5?q=80&w=1616&auto=format&fit=crop",
       link: "/donation-requests",
       primary: false
@@ -23,7 +23,7 @@ const FeaturesSection = () => {
     {
       title: "Success Stories",
       desc: "Hear from recipients whose lives were transformed by the selfless acts of donors like you. Real people, real impact.",
-      icon: <Heart className="text-red-600" size={32} />,
+      icon: <Heart className="text-rose-600" size={32} />,
       image: "https://i.pinimg.com/736x/12/ad/4b/12ad4b65d54aa54981a93d60f39c1017.jpg",
       link: "/stories",
       primary: false
@@ -39,7 +39,7 @@ const FeaturesSection = () => {
           viewport={{ once: true }}
           className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white mb-6 tracking-tighter"
         >
-          MAKING AN <span className="text-red-500 underline decoration-red-200 underline-offset-8">IMPACT</span>
+          MAKING AN <span className="text-rose-500 underline decoration-rose-200 underline-offset-8">IMPACT</span>
         </Motion.h2>
         <Motion.p 
           initial={{ opacity: 0, y: 20 }}
@@ -62,8 +62,8 @@ const FeaturesSection = () => {
             transition={{ delay: idx * 0.1 }}
             className={`group relative rounded-[2.5rem] overflow-hidden border transition-all duration-500 ${
               feature.primary 
-                ? "bg-red-600 text-white border-red-500 shadow-2xl shadow-red-200 dark:shadow-none" 
-                : "bg-white dark:bg-gray-800 border-gray-100 dark:border-gray-700 shadow-xl hover:shadow-2xl"
+                ? "bg-rose-600 text-white border-rose-500 shadow-2xl shadow-rose-200 dark:shadow-none" 
+                : "bg-rose-50/40 dark:bg-gray-900 border-rose-100/50 dark:border-gray-800 shadow-xl hover:shadow-2xl"
             }`}
           >
             <div className="aspect-[4/3] overflow-hidden">
@@ -76,20 +76,20 @@ const FeaturesSection = () => {
 
             <div className="p-8">
               <div className="flex items-center gap-4 mb-6">
-                <div className={`p-4 rounded-2xl ${feature.primary ? "bg-white/20" : "bg-red-50 dark:bg-red-900/20"}`}>
+                <div className={`p-4 rounded-2xl ${feature.primary ? "bg-white/20" : "bg-rose-50 dark:bg-rose-900/20"}`}>
                   {feature.icon}
                 </div>
                 <h3 className="text-2xl font-bold tracking-tight">{feature.title}</h3>
               </div>
 
-              <p className={`text-lg mb-8 leading-relaxed ${feature.primary ? "text-red-50" : "text-gray-600 dark:text-gray-400"}`}>
+              <p className={`text-lg mb-8 leading-relaxed ${feature.primary ? "text-rose-50" : "text-gray-600 dark:text-gray-400"}`}>
                 {feature.desc}
               </p>
 
               <Link
                 to={feature.link}
                 className={`inline-flex items-center gap-2 font-bold group/link ${
-                  feature.primary ? "text-white" : "text-red-600"
+                  feature.primary ? "text-white" : "text-rose-600"
                 }`}
               >
                 Explore Now 
