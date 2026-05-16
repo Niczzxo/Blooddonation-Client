@@ -127,24 +127,46 @@ const ExtraSections = () => {
       </section>
 
       {/* Blood Types & Compatibility */}
-      <section className="py-16">
+      <section className="py-24">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12 text-rose-800 animate-fade-in-down">Blood Types & Compatibility</h2>
-          <div className="overflow-x-auto animate-fade-in-up">
-            <table className="table table-zebra w-full border border-rose-200 dark:border-rose-700">
-              <thead className="bg-rose-100 dark:bg-rose-900">
-                <tr>
-                  <th>Your Blood Type</th>
-                  <th>Can Receive From</th>
-                  <th>Can Donate To</th>
+          <h2 className="text-4xl md:text-6xl font-black text-center mb-12 text-rose-600 dark:text-rose-500 uppercase tracking-tighter animate-fade-in-down">
+            Blood Types & <span className="text-gray-900 dark:text-white">Compatibility</span>
+          </h2>
+          <div className="overflow-x-auto rounded-[2.5rem] shadow-2xl border border-rose-100 dark:border-gray-800 animate-fade-in-up">
+            <table className="table w-full">
+              <thead className="bg-rose-600 text-white border-none">
+                <tr className="border-none">
+                  <th className="py-8 px-10 text-xl font-black uppercase tracking-widest text-left">Your Blood Type</th>
+                  <th className="py-8 px-10 text-xl font-black uppercase tracking-widest text-left">Can Receive From</th>
+                  <th className="py-8 px-10 text-xl font-black uppercase tracking-widest text-left">Can Donate To</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr><td>A+</td><td>A+, A-, O+, O-</td><td>A+, AB+</td></tr>
-                <tr><td>A-</td><td>A-, O-</td><td>A+, A-, AB+, AB-</td></tr>
-                <tr><td>B+</td><td>B+, B-, O+, O-</td><td>B+, AB+</td></tr>
-                <tr><td>O-</td><td>O-</td><td>Everyone (Universal Donor)</td></tr>
-                <tr><td>AB+</td><td>All types</td><td>AB+</td></tr>
+              <tbody className="bg-rose-50/30 dark:bg-gray-950">
+                <tr className="border-rose-100 dark:border-gray-800 hover:bg-rose-100/50 dark:hover:bg-gray-900 transition-colors">
+                  <td className="py-6 px-10 font-black text-2xl text-rose-600">A+</td>
+                  <td className="py-6 px-10 font-bold text-lg text-gray-700 dark:text-gray-300">A+, A-, O+, O-</td>
+                  <td className="py-6 px-10 font-bold text-lg text-gray-700 dark:text-gray-300">A+, AB+</td>
+                </tr>
+                <tr className="bg-rose-50/50 dark:bg-gray-900/50 border-rose-100 dark:border-gray-800 hover:bg-rose-100/50 dark:hover:bg-gray-900 transition-colors">
+                  <td className="py-6 px-10 font-black text-2xl text-rose-600">A-</td>
+                  <td className="py-6 px-10 font-bold text-lg text-gray-700 dark:text-gray-300">A-, O-</td>
+                  <td className="py-6 px-10 font-bold text-lg text-gray-700 dark:text-gray-300">A+, A-, AB+, AB-</td>
+                </tr>
+                <tr className="border-rose-100 dark:border-gray-800 hover:bg-rose-100/50 dark:hover:bg-gray-900 transition-colors">
+                  <td className="py-6 px-10 font-black text-2xl text-rose-600">B+</td>
+                  <td className="py-6 px-10 font-bold text-lg text-gray-700 dark:text-gray-300">B+, B-, O+, O-</td>
+                  <td className="py-6 px-10 font-bold text-lg text-gray-700 dark:text-gray-300">B+, AB+</td>
+                </tr>
+                <tr className="bg-rose-50/50 dark:bg-gray-900/50 border-rose-100 dark:border-gray-800 hover:bg-rose-100/50 dark:hover:bg-gray-900 transition-colors">
+                  <td className="py-6 px-10 font-black text-2xl text-rose-600">O-</td>
+                  <td className="py-6 px-10 font-bold text-lg text-gray-700 dark:text-gray-300">O-</td>
+                  <td className="py-6 px-10 font-bold text-lg text-gray-700 dark:text-gray-300">Everyone <span className="text-xs opacity-60 uppercase font-black">(Universal Donor)</span></td>
+                </tr>
+                <tr className="border-rose-100 dark:border-gray-800 hover:bg-rose-100/50 dark:hover:bg-gray-900 transition-colors">
+                  <td className="py-6 px-10 font-black text-2xl text-rose-600">AB+</td>
+                  <td className="py-6 px-10 font-bold text-lg text-gray-700 dark:text-gray-300">All types</td>
+                  <td className="py-6 px-10 font-bold text-lg text-gray-700 dark:text-gray-300">AB+</td>
+                </tr>
               </tbody>
             </table>
           </div>
