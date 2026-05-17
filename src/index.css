@@ -7,21 +7,25 @@
   --font-display: "Outfit", var(--font-sans);
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
   
-  --color-red-50: #fff5f5;
-  --color-red-100: #ffe3e3;
-  --color-red-200: #ffc9c9;
-  --color-red-300: #ffa8a8;
-  --color-red-400: #ff8787;
-  --color-red-500: #ff3333;
-  --color-red-600: #ff0000; /* Pure Vibrant Red */
-  --color-red-700: #e60000;
-  --color-red-800: #cc0000;
-  --color-red-900: #b30000;
+  --color-red-50: #fff1f2;
+  --color-red-100: #ffe4e6;
+  --color-red-200: #fecdd3;
+  --color-red-300: #fda4af;
+  --color-red-400: #fb7185;
+  --color-red-500: #ff1a1a;
+  --color-red-600: #ee0000; /* Professional vibrant red */
+  --color-red-700: #cc0000;
+  --color-red-800: #990000;
+  --color-red-900: #7f0000;
+  --color-red-950: #450505;
+
+  --color-primary: var(--color-red-600);
+  --color-primary-content: #ffffff;
 }
 
 @layer base {
   body {
-    @apply font-sans text-gray-900 bg-red-50/20 dark:bg-gray-950 dark:text-gray-100 transition-colors duration-300 min-h-screen;
+    @apply font-sans text-gray-900 bg-white dark:bg-[#080808] dark:text-gray-100 transition-colors duration-300 min-h-screen;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -31,7 +35,7 @@
 
 @layer utilities {
   .glass {
-    @apply bg-white/70 dark:bg-gray-900/70 backdrop-blur-md border border-white/20 dark:border-gray-800/20 shadow-xl;
+    @apply bg-white/70 dark:bg-black/60 backdrop-blur-md border border-white/20 dark:border-white/10 shadow-xl;
   }
   
   .text-glow {

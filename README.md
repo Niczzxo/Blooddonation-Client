@@ -7,13 +7,13 @@ A complete **MERN Stack Blood Donation Platform** that connects blood donors wit
 ## 🌐 Live & Source Code
 
 🔴 **Live Website**
-👉 [https://your-live-link.vercel.app](https://redpulse-blood-donation.netlify.app/)
+👉 [https://your-live-link.vercel.app](https://bloodsync-blood-donation.vercel.app/)
 
 🟢 **Client Repository**
-👉 [https://github.com/yourusername/blood-donation-client](https://github.com/ASIK-0/blood-donation-client.git)
+👉 [https://github.com/yourusername/blood-donation-client](https://github.com/Niczzxo/Blooddonation-Client.git)
 
 🟡 **Server Repository**
-👉 [https://github.com/yourusername/blood-donation-server](https://github.com/ASIK-0/blood-donation-server.git)
+👉 [https://github.com/yourusername/blood-donation-server](https://github.com/Niczzxo/Blooddonation-server.git)
 
 ---
 

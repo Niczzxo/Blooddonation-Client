@@ -34,32 +34,32 @@ const ExtraSections = () => {
       </section>
 
       {/* Quick Statistics */}
-      <section className="py-16 bg-red-50 dark:bg-red-950">
+      <section className="py-16 bg-red-50 dark:bg-red-900/10">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12 text-red-600 dark:text-red-300 animate-fade-in-down">Our Impact</h2>
+          <h2 className="text-4xl font-bold text-center mb-12 text-red-600 dark:text-red-400 animate-fade-in-down">Our Impact</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="stats shadow-lg bg-red-50/50 dark:bg-gray-900 border border-red-100 dark:border-gray-800 animate-fade-in-up animation-delay-100">
+            <div className="stats shadow-lg bg-red-50/50 dark:bg-white/5 border border-red-100 dark:border-white/5 animate-fade-in-up animation-delay-100">
               <div className="stat place-items-center">
                 <div className="stat-title text-red-600 dark:text-red-400">Total Donors</div>
-                <div className="stat-value text-red-700 dark:text-red-300">12,580+</div>
+                <div className="stat-value text-red-700 dark:text-red-200">12,580+</div>
               </div>
             </div>
-            <div className="stats shadow-lg bg-red-50/50 dark:bg-gray-900 border border-red-100 dark:border-gray-800 animate-fade-in-up animation-delay-200">
+            <div className="stats shadow-lg bg-red-50/50 dark:bg-white/5 border border-red-100 dark:border-white/5 animate-fade-in-up animation-delay-200">
               <div className="stat place-items-center">
                 <div className="stat-title text-red-600 dark:text-red-400">Lives Saved</div>
-                <div className="stat-value text-red-700 dark:text-red-300">45,000+</div>
+                <div className="stat-value text-red-700 dark:text-red-200">45,000+</div>
               </div>
             </div>
-            <div className="stats shadow-lg bg-red-50/50 dark:bg-gray-900 border border-red-100 dark:border-gray-800 animate-fade-in-up animation-delay-300">
+            <div className="stats shadow-lg bg-red-50/50 dark:bg-white/5 border border-red-100 dark:border-white/5 animate-fade-in-up animation-delay-300">
               <div className="stat place-items-center">
                 <div className="stat-title text-red-600 dark:text-red-400">Requests Fulfilled</div>
-                <div className="stat-value text-red-700 dark:text-red-300">8,720+</div>
+                <div className="stat-value text-red-700 dark:text-red-200">8,720+</div>
               </div>
             </div>
-            <div className="stats shadow-lg bg-red-50/50 dark:bg-gray-900 border border-red-100 dark:border-gray-800 animate-fade-in-up animation-delay-400">
+            <div className="stats shadow-lg bg-red-50/50 dark:bg-white/5 border border-red-100 dark:border-white/5 animate-fade-in-up animation-delay-400">
               <div className="stat place-items-center">
                 <div className="stat-title text-red-600 dark:text-red-400">Active Campaigns</div>
-                <div className="stat-value text-red-700 dark:text-red-300">150+</div>
+                <div className="stat-value text-red-700 dark:text-red-200">150+</div>
               </div>
             </div>
           </div>
@@ -69,7 +69,7 @@ const ExtraSections = () => {
       {/* How It Works */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12 text-red-600 dark:text-red-300 animate-fade-in-down">How It Works</h2>
+          <h2 className="text-4xl font-bold text-center mb-12 text-red-600 dark:text-white animate-fade-in-down">How It Works</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
               { step: 1, title: "Register", desc: "Create your donor profile" },
@@ -77,11 +77,11 @@ const ExtraSections = () => {
               { step: 3, title: "Connect", desc: "Contact the donor/recipient" },
               { step: 4, title: "Save a Life", desc: "Donate and make a difference" },
             ].map((item, index) => (
-              <div key={item.step} className="card bg-red-50/50 dark:bg-gray-900 shadow-xl border border-red-100 dark:border-gray-800 animate-fade-in-up" style={{animationDelay: `${index * 0.1}s`}}>
+              <div key={item.step} className="card bg-red-50/50 dark:bg-white/[0.03] shadow-xl border border-red-100 dark:border-white/5 animate-fade-in-up" style={{animationDelay: `${index * 0.1}s`}}>
                 <div className="card-body items-center text-center">
-                  <div className="badge badge-lg bg-red-600 text-white mb-4 animate-scale-in">{item.step}</div>
-                  <h3 className="card-title text-red-700 dark:text-red-300">{item.title}</h3>
-                  <p className="text-gray-700 dark:text-gray-300">{item.desc}</p>
+                  <div className="badge badge-lg bg-red-600 text-white mb-4 animate-scale-in border-none font-bold">{item.step}</div>
+                  <h3 className="card-title text-red-700 dark:text-red-400">{item.title}</h3>
+                  <p className="text-gray-700 dark:text-gray-400">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -90,21 +90,21 @@ const ExtraSections = () => {
       </section>
 
       {/* Urgent Blood Requests Teaser */}
-      <section className="py-16 bg-red-50 dark:bg-red-950">
+      <section className="py-16 bg-red-50 dark:bg-red-900/10">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center mb-8">
-            <h2 className="text-4xl font-bold text-red-600 dark:text-red-300 animate-fade-in-left">Urgent Blood Requests</h2>
-            <Link to="/donation-requests" className="btn bg-red-600 text-white hover:bg-red-700 animate-fade-in-right">View All</Link>
+            <h2 className="text-4xl font-bold text-red-600 dark:text-red-400 animate-fade-in-left">Urgent Blood Requests</h2>
+            <Link to="/donation-requests" className="btn bg-red-600 text-white hover:bg-red-700 animate-fade-in-right border-none">View All</Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="card bg-red-50/50 dark:bg-gray-900 shadow-xl border border-red-100 dark:border-gray-800 animate-fade-in-up" style={{animationDelay: `${(i-1) * 0.15}s`}}>
+              <div key={i} className="card bg-red-50/50 dark:bg-white/[0.03] shadow-xl border border-red-100 dark:border-white/5 animate-fade-in-up" style={{animationDelay: `${(i-1) * 0.15}s`}}>
                 <div className="card-body">
-                  <div className="badge bg-red-600 text-white text-xl mb-2">A+</div>
-                  <h3 className="card-title text-red-700 dark:text-red-300">Urgent A+ Blood Needed</h3>
-                  <p className="text-gray-700 dark:text-gray-300">Barishal Medical College Hospital</p>
+                  <div className="badge bg-red-600 text-white text-xl mb-2 border-none font-bold">A+</div>
+                  <h3 className="card-title text-red-700 dark:text-red-400">Urgent A+ Blood Needed</h3>
+                  <p className="text-gray-700 dark:text-gray-400">Barishal Medical College Hospital</p>
                   <div className="card-actions justify-end mt-4">
-                    <Link to={`/request/${i}`} className="btn btn-outline border-red-600 text-red-600 hover:bg-red-600 hover:text-white">Details</Link>
+                    <Link to={`/request/${i}`} className="btn btn-outline border-red-600 text-red-600 hover:bg-red-600 hover:text-white transition-all">Details</Link>
                   </div>
                 </div>
               </div>
@@ -241,15 +241,15 @@ const ExtraSections = () => {
       </section>
 
       {/* Final Call to Action */}
-      <section className="py-20 text-center bg-red-50 dark:bg-red-950">
+      <section className="py-20 text-center bg-red-50 dark:bg-white/5">
         <div className="container mx-auto px-4">
-          <h2 className="text-5xl font-bold mb-6 text-red-600 dark:text-red-300">Every Drop Counts</h2>
-          <p className="text-xl mb-10 max-w-3xl mx-auto text-gray-700 dark:text-gray-300">
+          <h2 className="text-5xl font-bold mb-6 text-red-600 dark:text-red-400">Every Drop Counts</h2>
+          <p className="text-xl mb-10 max-w-3xl mx-auto text-gray-700 dark:text-gray-400">
             Be the reason someone smiles today. Join the BloodSync community and help save lives.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Link to="/register" className="btn btn-lg bg-red-600 text-white hover:bg-red-700">Donate Now</Link>
-            <Link to="/donation-requests" className="btn btn-lg btn-outline border-red-600 text-red-600 hover:bg-red-600 hover:text-white">Request Blood</Link>
+            <Link to="/register" className="btn btn-lg bg-red-600 text-white hover:bg-red-700 border-none px-12">Donate Now</Link>
+            <Link to="/donation-requests" className="btn btn-lg btn-outline border-red-600 text-red-600 hover:bg-red-600 hover:text-white px-12">Request Blood</Link>
           </div>
         </div>
       </section>

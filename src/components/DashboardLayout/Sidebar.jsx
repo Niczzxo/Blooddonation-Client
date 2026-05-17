@@ -25,7 +25,7 @@ const Sidebar = () => {
     const navLinkStyles = ({ isActive }) =>
         `group flex items-center justify-between px-4 py-3 rounded-2xl transition-all duration-300 ${isActive
             ? "bg-red-600 text-white shadow-lg shadow-red-200 dark:shadow-none font-bold scale-[1.02]"
-            : "text-gray-500 dark:text-gray-400 hover:bg-red-50 dark:hover:bg-gray-700 hover:text-red-600 font-medium"
+            : "text-gray-500 dark:text-gray-400 hover:bg-red-50 dark:hover:bg-white/5 hover:text-red-600 font-medium"
         }`;
 
     const closeSidebar = () => setOpen(false);
@@ -58,7 +58,7 @@ const Sidebar = () => {
             </AnimatePresence>
 
             <div
-                className={`h-screen w-72 bg-white dark:bg-gray-900 border-r border-gray-100 dark:border-gray-800 flex flex-col p-6 fixed lg:sticky top-0 left-0 z-50 transform transition-all duration-500 ease-out ${open ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0 shadow-2xl lg:shadow-none`}
+                className={`h-screen w-72 bg-white dark:bg-[#0a0a0a] border-r border-gray-100 dark:border-white/5 flex flex-col p-6 fixed lg:sticky top-0 left-0 z-50 transform transition-all duration-500 ease-out ${open ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0 shadow-2xl lg:shadow-none`}
             >
                 <div className="flex items-center justify-between mb-12">
                     <div className="flex items-center gap-3">

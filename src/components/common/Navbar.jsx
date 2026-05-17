@@ -22,6 +22,17 @@ const Navbar = () => {
     const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
     useEffect(() => {
+        const currentTheme = localStorage.getItem("theme") || "light";
+        setTheme(currentTheme);
+        document.documentElement.setAttribute("data-theme", currentTheme);
+        if (currentTheme === "dark") {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+    }, []);
+
+    useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 20);
         };
@@ -34,6 +45,11 @@ const Navbar = () => {
         setTheme(newTheme);
         localStorage.setItem("theme", newTheme);
         document.documentElement.setAttribute("data-theme", newTheme);
+        if (newTheme === "dark") {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
     };
 
     const handleLogOut = () => {
@@ -50,7 +66,7 @@ const Navbar = () => {
     return (
         <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "py-2" : "py-4"}`}>
             <div className="max-w-7xl mx-auto px-4 md:px-6">
-                <div className={`flex items-center justify-between py-2 px-4 md:px-6 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md rounded-full shadow-lg border border-red-100 dark:border-gray-800 transition-all ${scrolled ? "shadow-xl" : ""}`}>
+                <div className={`flex items-center justify-between py-2 px-4 md:px-6 bg-white/80 dark:bg-black/60 backdrop-blur-md rounded-full shadow-lg border border-red-100 dark:border-white/10 transition-all ${scrolled ? "shadow-xl" : ""}`}>
                     
                     {/* Left Section: Mobile Menu Trigger & Desktop Logo */}
                     <div className="flex items-center flex-1 lg:flex-none">
