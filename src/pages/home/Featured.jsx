@@ -63,7 +63,7 @@ const FeaturesSection = () => {
             className={`group relative rounded-[2.5rem] overflow-hidden border transition-all duration-500 ${
               feature.primary 
                 ? "bg-rose-600 text-white border-rose-500 shadow-2xl shadow-rose-200 dark:shadow-none" 
-                : "bg-rose-50/40 dark:bg-gray-900 border-rose-100/50 dark:border-gray-800 shadow-xl hover:shadow-2xl"
+                : "bg-white dark:bg-gray-900 border-rose-100/50 dark:border-gray-800 shadow-xl hover:shadow-2xl"
             }`}
           >
             <div className="aspect-[4/3] overflow-hidden">

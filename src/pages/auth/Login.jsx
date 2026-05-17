@@ -33,7 +33,7 @@ const Login = () => {
             <Motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="w-full max-w-md bg-white dark:bg-gray-800 rounded-[2.5rem] shadow-2xl border border-gray-100 dark:border-gray-700 overflow-hidden"
+                className="w-full max-w-md bg-rose-50/50 dark:bg-gray-900 rounded-[2.5rem] shadow-2xl border border-rose-100 dark:border-gray-800 overflow-hidden"
             >
                 <div className="p-8 md:p-12">
                     <div className="mb-8">
@@ -99,7 +99,7 @@ const Login = () => {
                         </Motion.button>
                     </form>
 
-                    <div className="mt-10 pt-8 border-t border-gray-50 dark:border-gray-700 text-center">
+                    <div className="mt-10 pt-8 border-t border-rose-100 dark:border-gray-800 text-center">
                         <p className="text-gray-500 dark:text-gray-400 font-medium">
                             New to our community? 
                             <Link

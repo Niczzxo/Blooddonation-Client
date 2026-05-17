@@ -6,7 +6,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-white dark:bg-gray-900 pt-24 pb-12 overflow-hidden border-t border-gray-100 dark:border-gray-800">
+    <footer className="bg-rose-50/10 dark:bg-gray-950 pt-24 pb-12 overflow-hidden border-t border-rose-100 dark:border-gray-800">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
           <div className="space-y-8">
@@ -28,7 +28,7 @@ const Footer = () => {
                     whileHover={{ scale: 1.1, y: -5 }}
                     whileTap={{ scale: 0.9 }}
                     href="#" 
-                    className="w-12 h-12 rounded-2xl bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-gray-400 hover:text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-900/20 transition-all shadow-sm"
+                    className="w-12 h-12 rounded-2xl bg-rose-50 dark:bg-gray-900 flex items-center justify-center text-gray-400 hover:text-rose-600 hover:bg-rose-100 dark:hover:bg-rose-900/40 transition-all shadow-sm border border-rose-100 dark:border-gray-800"
                 >
                     <Icon size={20} />
                 </Motion.a>
@@ -94,7 +94,7 @@ const Footer = () => {
 
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-rose-600 to-rose-400 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-            <div className="relative bg-white dark:bg-gray-800 p-8 rounded-[2.5rem] border border-gray-100 dark:border-gray-700 h-full flex flex-col justify-between shadow-xl">
+            <div className="relative bg-rose-50 dark:bg-gray-900 p-8 rounded-[2.5rem] border border-rose-100 dark:border-gray-800 h-full flex flex-col justify-between shadow-xl">
               <div>
                 <h3 className="text-2xl font-black text-gray-900 dark:text-white mb-4 tracking-tighter">Become a Hero Today</h3>
                 <p className="text-gray-500 dark:text-gray-400 font-medium mb-8">Join over 10,000 donors who are making a difference every single day.</p>

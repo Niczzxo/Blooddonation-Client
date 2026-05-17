@@ -5,7 +5,7 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import toast from "react-hot-toast";
 import Loading from "../../../components/common/Loading";
-import { FaCamera } from "react-icons/fa";
+import { Camera } from "lucide-react";
 import axios from "axios";
 
 const Profile = () => {
@@ -134,7 +134,7 @@ const Profile = () => {
                       className="absolute inset-0 opacity-0 cursor-pointer"
                     />
                     <div className="absolute bottom-4 right-4 bg-rose-600 hover:bg-rose-700 text-white p-4 rounded-full shadow-xl cursor-pointer transition-all hover:scale-110">
-                      <FaCamera className="text-2xl" />
+                      <Camera className="text-2xl" />
                     </div>
                   </>
                 )}

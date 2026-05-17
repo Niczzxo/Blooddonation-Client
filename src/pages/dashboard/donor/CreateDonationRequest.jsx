@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { FaUser, FaTint, FaMapMarkerAlt, FaHospital, FaCalendarAlt, FaClock, FaCommentDots } from "react-icons/fa";
+import { User, Droplets, MapPin, Hospital, Calendar, Clock, MessageSquare } from "lucide-react";
 import { use, useEffect, useState } from "react";
 import { AuthContext } from "../../../contexts/AuthContext";
 import axios from "axios";
@@ -85,50 +85,46 @@ const CreateDonationRequest = () => {
         <div className="min-h-screen my-10 px-4">
             <div className="max-w-3xl mx-auto">
                 <div className="m-8 text-center">
-                    <h1 className="text-2xl md:text-5xl font-bold text-gray-900">Create Blood Request</h1>
-                    <p className="text-gray-600 mt-2">Your request can save a life</p>
+                    <h1 className="text-2xl md:text-5xl font-black text-gray-900 dark:text-white uppercase tracking-tighter">Create Blood Request</h1>
+                    <p className="text-gray-500 dark:text-gray-400 font-medium mt-2">Your request can save a life</p>
                 </div>
 
-                <div className="bg-white rounded-2xl shadow-xl border border-red-100 p-8">
+                <div className="bg-rose-50/50 dark:bg-gray-900 rounded-[2.5rem] shadow-2xl border border-rose-100 dark:border-gray-800 p-8 md:p-12">
 
-                    <form onSubmit={handleRequest} className="space-y-6">
+                    <form onSubmit={handleRequest} className="space-y-8">
 
-                        <div className="bg-gray-50 rounded-xl p-6 border">
-                            <h3 className="font-bold text-lg text-gray-800 mb-4 flex items-center gap-2">
-                                <FaUser className="text-red-600" /> Requester Information
+                        <div className="bg-rose-50 dark:bg-gray-800 rounded-2xl p-6 border border-rose-100 dark:border-gray-700">
+                            <h3 className="font-black uppercase tracking-widest text-xs text-gray-400 mb-4 flex items-center gap-2">
+                                <User className="text-rose-600" /> Requester Information
                             </h3>
                             <div className="grid md:grid-cols-2 gap-5">
                                 <div>
-                                    <p className="text-sm text-gray-600">Name</p>
-                                    <p className="font-semibold text-gray-800">{user?.displayName}</p>
+                                    <p className="text-xs font-black uppercase tracking-widest text-gray-400 mb-1">Name</p>
+                                    <p className="font-bold text-gray-900 dark:text-white text-lg">{user?.displayName}</p>
                                 </div>
                                 <div>
-                                    <p className="text-sm text-gray-600">Email</p>
-                                    <p className="font-semibold text-gray-800">{user?.email}</p>
+                                    <p className="text-xs font-black uppercase tracking-widest text-gray-400 mb-1">Email</p>
+                                    <p className="font-bold text-rose-600 dark:text-rose-400 text-lg">{user?.email}</p>
                                 </div>
                             </div>
                         </div>
 
                         <div className="grid md:grid-cols-2 gap-6">
                             <div>
-                                <label className="label">
-                                    <span className="label-text font-medium text-gray-700">Patient Name <span className="text-red-500">*</span></span>
-                                </label>
+                                <label className="text-xs font-black uppercase tracking-widest text-gray-400 px-1">Patient Name <span className="text-rose-600">*</span></label>
                                 <input
                                     type="text"
                                     name="recipient_name"
                                     placeholder="Enter patient name"
-                                    className="input input-bordered w-full focus:border-red-500 focus:ring-2 focus:ring-red-100"
+                                    className="input input-bordered w-full h-14 bg-rose-50/20 dark:bg-gray-950 border-rose-100 dark:border-gray-800 rounded-2xl focus:ring-2 focus:ring-rose-600 transition-all font-bold mt-2"
                                     required
                                 />
                             </div>
                             <div>
-                                <label className="label">
-                                    <span className="label-text font-medium text-gray-700">Blood Group <span className="text-red-500">*</span></span>
-                                </label>
-                                <div className="relative">
-                                    <FaTint className="absolute left-4 top-4 text-red-600 text-xl" />
-                                    <select name="blood_group" className="select select-bordered w-full" required>
+                                <label className="text-xs font-black uppercase tracking-widest text-gray-400 px-1">Blood Group <span className="text-rose-600">*</span></label>
+                                <div className="relative mt-2">
+                                    <Droplets className="absolute left-4 top-4 text-rose-600 text-xl z-10" />
+                                    <select name="blood_group" className="select select-bordered w-full h-14 pl-12 bg-rose-50/20 dark:bg-gray-950 border-rose-100 dark:border-gray-800 rounded-2xl focus:ring-2 focus:ring-rose-600 transition-all font-bold" required>
                                         <option value="">Select blood group</option>
                                         <option value="A+">A+</option>
                                         <option value="A-">A-</option>
@@ -145,16 +141,14 @@ const CreateDonationRequest = () => {
 
                         <div className="grid md:grid-cols-2 gap-6">
                             <div>
-                                <label className="label">
-                                    <span className="label-text font-medium text-gray-700">District <span className="text-red-500">*</span></span>
-                                </label>
-                                <div className="relative">
-                                    <FaMapMarkerAlt className="absolute left-4 top-4 text-red-600" />
+                                <label className="text-xs font-black uppercase tracking-widest text-gray-400 px-1">District <span className="text-rose-600">*</span></label>
+                                <div className="relative mt-2">
+                                    <MapPin className="absolute left-4 top-4 text-rose-600 z-10" />
                                     <select
                                         value={district}
                                         name="recipient_district"
                                         onChange={(e) => setDistrict(e.target.value)}
-                                        className="select select-bordered w-full pl-10 focus:border-red-500 focus:ring-2 focus:ring-red-100"
+                                        className="select select-bordered w-full h-14 pl-12 bg-rose-50/20 dark:bg-gray-950 border-rose-100 dark:border-gray-800 rounded-2xl focus:ring-2 focus:ring-rose-600 transition-all font-bold"
                                         required
                                     >
                                         <option value="">Select Your District</option>
@@ -165,12 +159,10 @@ const CreateDonationRequest = () => {
                                 </div>
                             </div>
                             <div>
-                                <label className="label">
-                                    <span className="label-text font-medium text-gray-700">Upazila <span className="text-red-500">*</span></span>
-                                </label>
-                                <div className="relative">
-                                    <FaMapMarkerAlt className="absolute left-4 top-4 text-red-600" />
-                                    <select value={upazila} name="recipient_upazila" onChange={(e) => setUpazila(e.target.value)} className="select select-bordered w-full pl-10 focus:border-red-500 focus:ring-2 focus:ring-red-100" required>
+                                <label className="text-xs font-black uppercase tracking-widest text-gray-400 px-1">Upazila <span className="text-rose-600">*</span></label>
+                                <div className="relative mt-2">
+                                    <MapPin className="absolute left-4 top-4 text-rose-600 z-10" />
+                                    <select value={upazila} name="recipient_upazila" onChange={(e) => setUpazila(e.target.value)} className="select select-bordered w-full h-14 pl-12 bg-rose-50/20 dark:bg-gray-950 border-rose-100 dark:border-gray-800 rounded-2xl focus:ring-2 focus:ring-rose-600 transition-all font-bold" required>
                                         <option value="">Select Your Upazila</option>
                                         {
                                             upazilas?.map(upazila => <option value={upazila.name} key={upazila.id} >{upazila?.name}</option>)
@@ -182,29 +174,25 @@ const CreateDonationRequest = () => {
 
                         <div className="grid md:grid-cols-2 gap-6">
                             <div>
-                                <label className="label">
-                                    <span className="label-text font-medium text-gray-700">Hospital Name <span className="text-red-500">*</span></span>
-                                </label>
-                                <div className="relative">
-                                    <FaHospital className="absolute left-4 top-4 text-red-600" />
+                                <label className="text-xs font-black uppercase tracking-widest text-gray-400 px-1">Hospital Name <span className="text-rose-600">*</span></label>
+                                <div className="relative mt-2">
+                                    <Hospital className="absolute left-4 top-4 text-rose-600 z-10" />
                                     <input
                                         type="text"
                                         name="hospital_name"
                                         placeholder="e.g. Dhaka Medical College"
-                                        className="input input-bordered w-full pl-10 focus:border-red-500 focus:ring-2 focus:ring-red-100"
+                                        className="input input-bordered w-full h-14 pl-12 bg-rose-50/20 dark:bg-gray-950 border-rose-100 dark:border-gray-800 rounded-2xl focus:ring-2 focus:ring-rose-600 transition-all font-bold"
                                         required
                                     />
                                 </div>
                             </div>
                             <div>
-                                <label className="label">
-                                    <span className="label-text font-medium text-gray-700">Full Address <span className="text-red-500">*</span></span>
-                                </label>
+                                <label className="text-xs font-black uppercase tracking-widest text-gray-400 px-1">Full Address <span className="text-rose-600">*</span></label>
                                 <input
                                     type="text"
                                     name="full_address"
                                     placeholder="Road, Area"
-                                    className="input input-bordered w-full focus:border-red-500 focus:ring-2 focus:ring-red-100"
+                                    className="input input-bordered w-full h-14 bg-rose-50/20 dark:bg-gray-950 border-rose-100 dark:border-gray-800 rounded-2xl focus:ring-2 focus:ring-rose-600 transition-all font-bold mt-2"
                                     required
                                 />
                             </div>
@@ -212,36 +200,30 @@ const CreateDonationRequest = () => {
 
                         <div className="grid md:grid-cols-2 gap-6">
                             <div>
-                                <label className="label">
-                                    <span className="label-text font-medium text-gray-700">Donation Date <span className="text-red-500">*</span></span>
-                                </label>
-                                <div className="relative">
-                                    <FaCalendarAlt className="absolute left-4 top-4 text-red-600" />
-                                    <input name="date" type="date" className="input input-bordered w-full pl-10 focus:border-red-500 focus:ring-2 focus:ring-red-100" required />
+                                <label className="text-xs font-black uppercase tracking-widest text-gray-400 px-1">Donation Date <span className="text-rose-600">*</span></label>
+                                <div className="relative mt-2">
+                                    <Calendar className="absolute left-4 top-4 text-rose-600 z-10" />
+                                    <input name="date" type="date" className="input input-bordered w-full h-14 pl-12 bg-rose-50/20 dark:bg-gray-950 border-rose-100 dark:border-gray-800 rounded-2xl focus:ring-2 focus:ring-rose-600 transition-all font-bold" required />
                                 </div>
                             </div>
                             <div>
-                                <label className="label">
-                                    <span className="label-text font-medium text-gray-700">Donation Time <span className="text-red-500">*</span></span>
-                                </label>
-                                <div className="relative">
-                                    <FaClock className="absolute left-4 top-4 text-red-600" />
-                                    <input name="time" type="text" placeholder="Enter donation time" className="input input-bordered w-full pl-10 focus:border-red-500 focus:ring-2 focus:ring-red-100" required />
+                                <label className="text-xs font-black uppercase tracking-widest text-gray-400 px-1">Donation Time <span className="text-rose-600">*</span></label>
+                                <div className="relative mt-2">
+                                    <Clock className="absolute left-4 top-4 text-rose-600 z-10" />
+                                    <input name="time" type="text" placeholder="Enter donation time" className="input input-bordered w-full h-14 pl-12 bg-rose-50/20 dark:bg-gray-950 border-rose-100 dark:border-gray-800 rounded-2xl focus:ring-2 focus:ring-rose-600 transition-all font-bold" required />
                                 </div>
                             </div>
                         </div>
 
                         <div>
-                            <label className="label">
-                                <span className="label-text font-medium text-gray-700">Request Message <span className="text-red-500">*</span></span>
-                            </label>
-                            <div className="relative">
-                                <FaCommentDots className="absolute left-4 top-4 text-red-600" />
+                            <label className="text-xs font-black uppercase tracking-widest text-gray-400 px-1">Request Message <span className="text-rose-600">*</span></label>
+                            <div className="relative mt-2">
+                                <MessageSquare className="absolute left-4 top-4 text-rose-600 z-10" />
                                 <textarea
                                     rows="4"
                                     name="message"
                                     placeholder="Why blood is needed urgently..."
-                                    className="textarea textarea-bordered w-full pl-10 focus:border-red-500 focus:ring-2 focus:ring-red-100 resize-none"
+                                    className="textarea textarea-bordered w-full pl-12 bg-rose-50/20 dark:bg-gray-950 border-rose-100 dark:border-gray-800 rounded-2xl focus:ring-2 focus:ring-rose-600 transition-all font-bold resize-none p-4"
                                     required
                                 ></textarea>
                             </div>
@@ -249,7 +231,7 @@ const CreateDonationRequest = () => {
 
                         <button
                             type="submit"
-                            className="btn btn-lg w-full bg-red-600 hover:bg-red-700 text-white border-none rounded-full shadow-lg text-lg font-semibold"
+                            className="btn btn-lg w-full h-16 bg-rose-600 hover:bg-rose-700 text-white border-none rounded-2xl shadow-xl shadow-rose-200 dark:shadow-none text-xl font-black transition-all hover:scale-[1.02]"
                         >
                             Create Request
                         </button>

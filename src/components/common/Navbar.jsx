@@ -26,6 +26,16 @@ const Navbar = () => {
             setScrolled(window.scrollY > 20);
         };
         window.addEventListener("scroll", handleScroll);
+        
+        // Apply theme on mount
+        const savedTheme = localStorage.getItem("theme") || "light";
+        document.documentElement.setAttribute("data-theme", savedTheme);
+        if (savedTheme === "dark") {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
@@ -34,6 +44,12 @@ const Navbar = () => {
         setTheme(newTheme);
         localStorage.setItem("theme", newTheme);
         document.documentElement.setAttribute("data-theme", newTheme);
+        
+        if (newTheme === "dark") {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
     };
 
     const handleLogOut = () => {
@@ -91,10 +107,10 @@ const Navbar = () => {
                                     <MyLink to="/">Home</MyLink>
                                 </li>
                                 <li onClick={closeMenu}>
-                                    <MyLink to="/donation-requests">Requests</MyLink>
+                                    <MyLink to="/donation-requests">Donation Requests</MyLink>
                                 </li>
                                 <li onClick={closeMenu}>
-                                    <MyLink to="/search">Search</MyLink>
+                                    <MyLink to="/search">Search Donors</MyLink>
                                 </li>
                                 {user && (
                                     <li onClick={closeMenu}>

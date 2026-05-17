@@ -1,6 +1,6 @@
 import React, { use, useEffect, useState } from 'react';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
-import { FaUsers, FaHandHoldingHeart, FaDonate } from "react-icons/fa";
+import { Users, HandHeart, DollarSign } from "lucide-react";
 import { AuthContext } from '../../../contexts/AuthContext';
 
 
@@ -28,7 +28,7 @@ const VolunteerHome = () => {
 
                 <div className="bg-rose-50/50 dark:bg-gray-900 rounded-3xl shadow-2xl border border-rose-100 dark:border-gray-800 overflow-hidden transform hover:scale-105 transition-all duration-300 group">
                     <div className="bg-gradient-to-r from-rose-600 to-rose-700 p-6 text-white">
-                        <FaUsers className="text-5xl mx-auto" />
+                        <Users className="text-5xl mx-auto" />
                     </div>
                     <div className="p-10 text-center">
                         <h3 className="text-6xl font-black text-gray-900 dark:text-white group-hover:text-rose-600 transition-colors">
@@ -45,7 +45,7 @@ const VolunteerHome = () => {
 
                 <div className="bg-rose-50/50 dark:bg-gray-900 rounded-3xl shadow-2xl border border-rose-100 dark:border-gray-800 overflow-hidden transform hover:scale-105 transition-all duration-300 group">
                     <div className="bg-gradient-to-r from-emerald-600 to-teal-600 p-6 text-white">
-                        <FaDonate className="text-5xl mx-auto" />
+                        <DollarSign className="text-5xl mx-auto" />
                     </div>
                     <div className="p-10 text-center">
                         <h3 className="text-5xl md:text-6xl font-black text-gray-900 dark:text-white group-hover:text-emerald-600 transition-colors">
@@ -62,7 +62,7 @@ const VolunteerHome = () => {
 
                 <div className="bg-rose-50/50 dark:bg-gray-900 rounded-3xl shadow-2xl border border-rose-100 dark:border-gray-800 overflow-hidden transform hover:scale-105 transition-all duration-300 group">
                     <div className="bg-gradient-to-r from-rose-500 to-rose-600 p-6 text-white">
-                        <FaHandHoldingHeart className="text-5xl mx-auto" />
+                        <HandHeart className="text-5xl mx-auto" />
                     </div>
                     <div className="p-10 text-center">
                         <h3 className="text-6xl font-black text-gray-900 dark:text-white group-hover:text-rose-500 transition-colors">

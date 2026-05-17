@@ -130,7 +130,7 @@ const Register = () => {
             <Motion.div 
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="w-full max-w-2xl bg-white dark:bg-gray-800 rounded-[3rem] shadow-2xl border border-gray-100 dark:border-gray-700 overflow-hidden"
+                className="w-full max-w-2xl bg-rose-50/50 dark:bg-gray-900 rounded-[3rem] shadow-2xl border border-rose-100 dark:border-gray-800 overflow-hidden"
             >
                 <div className="p-8 md:p-12">
                     <div className="mb-8">
@@ -188,7 +188,7 @@ const Register = () => {
                                     name="name"
                                     required
                                     placeholder="John Doe"
-                                    className="input input-bordered w-full h-14 bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-2 focus:ring-rose-500 transition-all font-semibold"
+                                    className="input input-bordered w-full h-14 bg-rose-50/20 dark:bg-gray-950 border-rose-100 dark:border-gray-800 rounded-2xl focus:ring-2 focus:ring-rose-500 transition-all font-semibold"
                                 />
                             </div>
                             <div className="space-y-2">
@@ -198,7 +198,7 @@ const Register = () => {
                                     name="email"
                                     required
                                     placeholder="hero@bloodcare.com"
-                                    className="input input-bordered w-full h-14 bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-700 rounded-2xl focus:ring-2 focus:ring-rose-500 transition-all font-semibold"
+                                    className="input input-bordered w-full h-14 bg-rose-50/20 dark:bg-gray-950 border-rose-100 dark:border-gray-800 rounded-2xl focus:ring-2 focus:ring-rose-500 transition-all font-semibold"
                                 />
                             </div>
                         </div>
@@ -298,7 +298,7 @@ const Register = () => {
                         </Motion.button>
                     </form>
 
-                    <div className="mt-12 pt-8 border-t border-gray-50 dark:border-gray-700 text-center">
+                    <div className="mt-12 pt-8 border-t border-rose-100 dark:border-gray-800 text-center">
                         <p className="text-gray-500 dark:text-gray-400 font-medium">
                             Already a hero? 
                             <Link
