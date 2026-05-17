@@ -25,7 +25,7 @@ const AdminHome = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
 
-                <div className="bg-red-50/50 dark:bg-gray-900 rounded-3xl shadow-2xl border border-red-100 dark:border-gray-800 overflow-hidden transform hover:scale-105 transition-all duration-300 group">
+                <div className="bg-red-50/50 dark:bg-white/[0.03] rounded-3xl shadow-2xl border border-red-100 dark:border-white/10 overflow-hidden transform hover:scale-105 transition-all duration-300 group">
                     <div className="bg-gradient-to-r from-red-600 to-red-700 p-6 text-white">
                         <FaUsers className="text-5xl mx-auto" />
                     </div>
@@ -37,12 +37,12 @@ const AdminHome = () => {
                             Registered Donors
                         </p>
                     </div>
-                    <div className="bg-red-50 dark:bg-gray-800 px-6 py-4 border-t border-red-100 dark:border-gray-700">
+                    <div className="bg-red-50 dark:bg-white/5 px-6 py-4 border-t border-red-100 dark:border-white/10">
                         <p className="text-sm text-gray-500 dark:text-gray-400 text-center font-bold">Growing Community</p>
                     </div>
                 </div>
 
-                <div className="bg-red-50/50 dark:bg-gray-900 rounded-3xl shadow-2xl border border-red-100 dark:border-gray-800 overflow-hidden transform hover:scale-105 transition-all duration-300 group">
+                <div className="bg-red-50/50 dark:bg-white/[0.03] rounded-3xl shadow-2xl border border-red-100 dark:border-white/10 overflow-hidden transform hover:scale-105 transition-all duration-300 group">
                     <div className="bg-gradient-to-r from-emerald-600 to-teal-600 p-6 text-white">
                         <FaDonate className="text-5xl mx-auto" />
                     </div>
@@ -54,12 +54,12 @@ const AdminHome = () => {
                             Total Funding
                         </p>
                     </div>
-                    <div className="bg-red-50 dark:bg-gray-800 px-6 py-4 border-t border-red-100 dark:border-gray-700">
+                    <div className="bg-red-50 dark:bg-white/5 px-6 py-4 border-t border-red-100 dark:border-white/10">
                         <p className="text-sm text-gray-500 dark:text-gray-400 text-center font-bold">Generous Hearts</p>
                     </div>
                 </div>
 
-                <div className="bg-red-50/50 dark:bg-gray-900 rounded-3xl shadow-2xl border border-red-100 dark:border-gray-800 overflow-hidden transform hover:scale-105 transition-all duration-300 group">
+                <div className="bg-red-50/50 dark:bg-white/[0.03] rounded-3xl shadow-2xl border border-red-100 dark:border-white/10 overflow-hidden transform hover:scale-105 transition-all duration-300 group">
                     <div className="bg-gradient-to-r from-red-500 to-red-600 p-6 text-white">
                         <FaHandHoldingHeart className="text-5xl mx-auto" />
                     </div>
@@ -71,7 +71,7 @@ const AdminHome = () => {
                             Active Requests
                         </p>
                     </div>
-                    <div className="bg-red-50 dark:bg-gray-800 px-6 py-4 border-t border-red-100 dark:border-gray-700">
+                    <div className="bg-red-50 dark:bg-white/5 px-6 py-4 border-t border-red-100 dark:border-white/10">
                         <p className="text-sm text-gray-500 dark:text-gray-400 text-center font-bold">Needs Action</p>
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import { use, useState, useEffect } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
+import { useTheme } from "../../contexts/ThemeContext";
 import MyLink from "./MyLink";
 import toast from "react-hot-toast";
 import { 
@@ -17,20 +18,9 @@ import { motion as Motion, AnimatePresence } from "motion/react";
 
 const Navbar = () => {
     const { user, logOut, role } = use(AuthContext);
+    const { theme, toggleTheme } = useTheme();
     const [menuOpen, setMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
-    const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
-
-    useEffect(() => {
-        const currentTheme = localStorage.getItem("theme") || "light";
-        setTheme(currentTheme);
-        document.documentElement.setAttribute("data-theme", currentTheme);
-        if (currentTheme === "dark") {
-            document.documentElement.classList.add("dark");
-        } else {
-            document.documentElement.classList.remove("dark");
-        }
-    }, []);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -39,18 +29,6 @@ const Navbar = () => {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
-
-    const handleThemeChange = () => {
-        const newTheme = theme === "light" ? "dark" : "light";
-        setTheme(newTheme);
-        localStorage.setItem("theme", newTheme);
-        document.documentElement.setAttribute("data-theme", newTheme);
-        if (newTheme === "dark") {
-            document.documentElement.classList.add("dark");
-        } else {
-            document.documentElement.classList.remove("dark");
-        }
-    };
 
     const handleLogOut = () => {
         logOut()
@@ -126,7 +104,7 @@ const Navbar = () => {
                         <Motion.button 
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            onClick={handleThemeChange}
+                            onClick={toggleTheme}
                             className="p-2 md:p-3 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-all text-gray-600 dark:text-gray-400"
                         >
                             {theme === "light" ? <Moon size={18} /> : <Sun size={18} />}

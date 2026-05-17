@@ -31,7 +31,7 @@ const DonorHome = () => {
             <Motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="relative overflow-hidden bg-red-50/50 dark:bg-gray-900 rounded-[3rem] p-8 md:p-12 border border-red-100 dark:border-gray-800 shadow-2xl shadow-red-100 dark:shadow-none"
+                className="relative overflow-hidden bg-red-50/50 dark:bg-white/[0.03] rounded-[3rem] p-8 md:p-12 border border-red-100 dark:border-white/10 shadow-2xl shadow-red-100 dark:shadow-none"
             >
                 <div className="absolute top-0 right-0 p-12 opacity-5 hidden md:block">
                     <Heart size={200} className="text-red-600" />
@@ -55,7 +55,7 @@ const DonorHome = () => {
                         </Link>
                         <Link 
                             to="/profile" 
-                            className="btn h-auto py-4 px-8 bg-red-50 dark:bg-gray-800 hover:bg-red-100 dark:hover:bg-gray-700 text-gray-900 dark:text-white border-none rounded-2xl font-black text-lg flex items-center gap-3 transition-transform hover:scale-105 active:scale-95"
+                            className="btn h-auto py-4 px-8 bg-red-50 dark:bg-white/5 hover:bg-red-100 dark:hover:bg-white/10 text-gray-900 dark:text-white border-none rounded-2xl font-black text-lg flex items-center gap-3 transition-transform hover:scale-105 active:scale-95"
                         >
                             <Activity size={20} className="text-red-600" />
                             View Stats
@@ -90,7 +90,7 @@ const DonorHome = () => {
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ delay: 0.3 + idx * 0.1 }}
-                                className="bg-red-50/50 dark:bg-gray-900 rounded-[2.5rem] border border-red-100 dark:border-gray-800 p-8 shadow-xl hover:shadow-2xl transition-all hover:-translate-y-2 group"
+                                className="bg-red-50/50 dark:bg-white/[0.03] rounded-[2.5rem] border border-red-100 dark:border-white/10 p-8 shadow-xl hover:shadow-2xl transition-all hover:-translate-y-2 group"
                             >
                                 <div className="flex justify-between items-start mb-6">
                                     <div className="w-14 h-14 bg-red-50 dark:bg-red-900/20 rounded-2xl flex items-center justify-center text-red-600 font-black text-xl shadow-inner">
@@ -125,7 +125,7 @@ const DonorHome = () => {
 
                                 <Link 
                                     to={`/donation-requests/${req._id}`} 
-                                    className="w-full btn h-auto py-3 bg-red-50 dark:bg-gray-950 group-hover:bg-red-600 text-gray-600 dark:text-white group-hover:text-white border-none rounded-xl font-black transition-all flex items-center justify-center gap-2"
+                                    className="w-full btn h-auto py-3 bg-red-50 dark:bg-white/5 group-hover:bg-red-600 text-gray-600 dark:text-white group-hover:text-white border-none rounded-xl font-black transition-all flex items-center justify-center gap-2"
                                 >
                                     Details
                                     <ArrowRight size={16} />
@@ -139,7 +139,7 @@ const DonorHome = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
-                    className="text-center py-24 bg-red-50/50 dark:bg-gray-900 rounded-[3rem] border border-dashed border-red-200 dark:border-gray-800 shadow-xl"
+                    className="text-center py-24 bg-red-50/50 dark:bg-white/[0.03] rounded-[3rem] border border-dashed border-red-200 dark:border-white/10 shadow-xl"
                 >
                     <div className="bg-red-50 dark:bg-red-900/10 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-8">
                         <Droplets size={40} className="text-red-600" />

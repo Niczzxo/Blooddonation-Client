@@ -44,9 +44,9 @@ const DonationRequests = () => {
                 <Motion.div 
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="text-center py-20 bg-red-50/50 dark:bg-gray-900 rounded-[3rem] p-12 border border-dashed border-red-200/50 dark:border-gray-800 shadow-xl"
+                    className="text-center py-20 bg-red-50/50 dark:bg-white/[0.03] rounded-[3rem] p-12 border border-dashed border-red-200/50 dark:border-white/10 shadow-xl"
                 >
-                    <div className="bg-red-50 dark:bg-red-900/20 rounded-full w-24 h-24 mx-auto mb-8 flex items-center justify-center text-red-600">
+                    <div className="bg-red-50 dark:bg-white/5 rounded-full w-24 h-24 mx-auto mb-8 flex items-center justify-center text-red-600">
                       <Heart size={40} />
                     </div>
                     <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Steady as a Breath</h3>
@@ -68,7 +68,7 @@ const DonationRequests = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: idx * 0.05 }}
-                            className="group bg-red-50/50 dark:bg-gray-900 rounded-[2rem] shadow-xl border border-red-100 dark:border-gray-800 overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-1"
+                            className="group bg-red-50/50 dark:bg-white/[0.03] rounded-[2rem] shadow-xl border border-red-100 dark:border-white/10 overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-1"
                         >
                             <div className="bg-red-600 p-8 text-center relative overflow-hidden">
                                 <div className="absolute top-0 right-0 p-4 opacity-10">
@@ -84,15 +84,15 @@ const DonationRequests = () => {
                                 
                                 <div className="space-y-4 mb-8">
                                     <div className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
-                                      <div className="p-2 bg-red-50 dark:bg-gray-800 rounded-lg text-red-600"><MapPin size={18} /></div>
+                                      <div className="p-2 bg-red-50 dark:bg-white/5 rounded-lg text-red-600"><MapPin size={18} /></div>
                                       <span className="font-medium">{req.recipient_district}, {req.recipient_upazila}</span>
                                     </div>
                                     <div className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
-                                      <div className="p-2 bg-red-50 dark:bg-gray-800 rounded-lg text-red-600"><Hospital size={18} /></div>
+                                      <div className="p-2 bg-red-50 dark:bg-white/5 rounded-lg text-red-600"><Hospital size={18} /></div>
                                       <span className="font-medium truncate">{req.hospital_name || "Private Location"}</span>
                                     </div>
                                     <div className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
-                                      <div className="p-2 bg-red-50 dark:bg-gray-800 rounded-lg text-red-600"><Calendar size={18} /></div>
+                                      <div className="p-2 bg-red-50 dark:bg-white/5 rounded-lg text-red-600"><Calendar size={18} /></div>
                                       <span className="font-medium">{req.donation_date}</span>
                                     </div>
                                 </div>
