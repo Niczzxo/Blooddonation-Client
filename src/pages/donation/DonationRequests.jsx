@@ -24,17 +24,17 @@ const DonationRequests = () => {
 
     return (
         <div className="max-w-7xl mx-auto py-20 px-4 min-h-screen">
-            <div className="text-center mb-20">
+            <div className="text-center mb-16">
                 <Motion.h2 
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="text-5xl md:text-8xl font-black text-gray-900 dark:text-white mb-6 tracking-tighter uppercase"
+                    className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white mb-4 tracking-tighter"
                 >
-                    URGENT <span className="text-rose-600">REQUESTS</span>
+                    URGENT <span className="text-red-600">REQUESTS</span>
                 </Motion.h2>
-                <div className="h-2 w-32 bg-rose-600 mx-auto rounded-full mb-8"></div>
-                <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto font-medium leading-relaxed">
-                    Humanity's greatest strength is our willingness to help one another. <br className="hidden md:block" /> Every second counts in saving a life.
+                <div className="h-1.5 w-24 bg-red-600 mx-auto rounded-full mb-6"></div>
+                <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto font-medium">
+                    Every second counts. Browse active blood donation requests below and see how you can help today.
                 </p>
             </div>
 
@@ -44,79 +44,66 @@ const DonationRequests = () => {
                 <Motion.div 
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="text-center py-24 bg-rose-50/50 dark:bg-gray-900 rounded-[4rem] border border-dashed border-rose-200 dark:border-gray-800 shadow-2xl"
+                    className="text-center py-20 bg-red-50/50 dark:bg-gray-900 rounded-[3rem] p-12 border border-dashed border-red-200/50 dark:border-gray-800 shadow-xl"
                 >
-                    <div className="bg-rose-50 dark:bg-rose-900/10 rounded-full w-32 h-32 mx-auto mb-10 flex items-center justify-center text-rose-600 shadow-inner">
-                      <Heart size={56} className="animate-pulse" />
+                    <div className="bg-red-50 dark:bg-red-900/20 rounded-full w-24 h-24 mx-auto mb-8 flex items-center justify-center text-red-600">
+                      <Heart size={40} />
                     </div>
-                    <h3 className="text-4xl font-black text-gray-900 dark:text-white mb-6 uppercase tracking-tighter">At Peace for Now</h3>
-                    <p className="text-xl text-gray-500 dark:text-gray-400 max-w-md mx-auto mb-12 font-medium">
-                        There are currently no urgent pending requests. Thank you for checking in on our community.
+                    <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Steady as a Breath</h3>
+                    <p className="text-xl text-gray-600 dark:text-gray-400 max-w-md mx-auto mb-10">
+                        There are no urgent requests at this moment. You can still prepare for the next one.
                     </p>
                     <Link
                         to="/dashboard/create-donation-request"
-                        className="btn h-auto px-12 py-5 bg-rose-600 hover:bg-rose-700 text-white border-none rounded-[2rem] font-black text-xl shadow-xl shadow-rose-200 dark:shadow-none transition-transform hover:scale-105 active:scale-95"
+                        className="btn h-auto px-10 py-4 bg-red-600 hover:bg-red-700 text-white border-none rounded-2xl font-bold text-xl shadow-xl shadow-red-100 dark:shadow-none"
                     >
-                        Need Help? Create Request
+                        Create Your Request
                     </Link>
                 </Motion.div>
             ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {requests.map((req, idx) => (
                         <Motion.div 
                             key={req._id}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: idx * 0.1 }}
-                            className="group bg-rose-50/50 dark:bg-gray-900 rounded-[3rem] shadow-xl border border-rose-100 dark:border-gray-800 overflow-hidden hover:shadow-2xl transition-all hover:scale-[1.02]"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: idx * 0.05 }}
+                            className="group bg-red-50/50 dark:bg-gray-900 rounded-[2rem] shadow-xl border border-red-100 dark:border-gray-800 overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-1"
                         >
-                            <div className="bg-rose-600 p-10 text-center relative overflow-hidden h-48 flex flex-col items-center justify-center">
-                                <Motion.div 
-                                    className="absolute -top-10 -right-10 text-white/10 group-hover:scale-125 transition-transform duration-700"
-                                    initial={{ rotate: -15 }}
-                                >
-                                  <Heart size={200} fill="currentColor" />
-                                </Motion.div>
-                                <p className="text-7xl font-black text-white relative z-10 tracking-tighter">{req.blood_group}</p>
-                                <p className="text-[10px] text-white/80 uppercase tracking-[0.3em] font-black mt-3 relative z-10">Live Request</p>
+                            <div className="bg-red-600 p-8 text-center relative overflow-hidden">
+                                <div className="absolute top-0 right-0 p-4 opacity-10">
+                                  <Heart size={80} strokeWidth={3} className="text-white" />
+                                </div>
+                                <p className="text-5xl font-black text-white relative z-10">{req.blood_group}</p>
+                                <p className="text-sm text-red-100 uppercase tracking-widest font-black mt-2 relative z-10">Urgent Requirement</p>
                             </div>
-                            
-                            <div className="p-10">
-                                <h3 className="font-black text-3xl text-gray-900 dark:text-white mb-8 group-hover:text-rose-600 transition-colors uppercase tracking-tight">
+                            <div className="p-8">
+                                <h3 className="font-bold text-2xl text-gray-900 dark:text-white mb-6 group-hover:text-red-600 transition-colors uppercase tracking-tight">
                                   {req.recipient_name}
                                 </h3>
                                 
-                                <div className="space-y-6 mb-10">
-                                    <div className="flex items-center gap-4 text-gray-600 dark:text-gray-400">
-                                      <div className="w-12 h-12 bg-rose-50 dark:bg-gray-800 rounded-2xl text-rose-600 flex items-center justify-center flex-shrink-0 group-hover:bg-rose-600 group-hover:text-white transition-colors duration-500 shadow-sm"><MapPin size={22} /></div>
-                                      <div className="flex flex-col">
-                                        <span className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-0.5">Location</span>
-                                        <span className="font-bold text-gray-800 dark:text-gray-200">{req.recipient_district}, {req.recipient_upazila}</span>
-                                      </div>
+                                <div className="space-y-4 mb-8">
+                                    <div className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
+                                      <div className="p-2 bg-red-50 dark:bg-gray-800 rounded-lg text-red-600"><MapPin size={18} /></div>
+                                      <span className="font-medium">{req.recipient_district}, {req.recipient_upazila}</span>
                                     </div>
-                                    <div className="flex items-center gap-4 text-gray-600 dark:text-gray-400">
-                                      <div className="w-12 h-12 bg-rose-50 dark:bg-gray-800 rounded-2xl text-rose-600 flex items-center justify-center flex-shrink-0 group-hover:bg-rose-600 group-hover:text-white transition-colors duration-500 shadow-sm"><Hospital size={22} /></div>
-                                      <div className="flex flex-col">
-                                        <span className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-0.5">Hospital</span>
-                                        <span className="font-bold text-gray-800 dark:text-gray-200 truncate max-w-[200px]">{req.hospital_name || "Private"}</span>
-                                      </div>
+                                    <div className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
+                                      <div className="p-2 bg-red-50 dark:bg-gray-800 rounded-lg text-red-600"><Hospital size={18} /></div>
+                                      <span className="font-medium truncate">{req.hospital_name || "Private Location"}</span>
                                     </div>
-                                    <div className="flex items-center gap-4 text-gray-600 dark:text-gray-400">
-                                      <div className="w-12 h-12 bg-rose-50 dark:bg-gray-800 rounded-2xl text-rose-600 flex items-center justify-center flex-shrink-0 group-hover:bg-rose-600 group-hover:text-white transition-colors duration-500 shadow-sm"><Calendar size={22} /></div>
-                                      <div className="flex flex-col">
-                                        <span className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-0.5">Schedule</span>
-                                        <span className="font-bold text-gray-800 dark:text-gray-200">{req.donation_date} at {req.donation_time}</span>
-                                      </div>
+                                    <div className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
+                                      <div className="p-2 bg-red-50 dark:bg-gray-800 rounded-lg text-red-600"><Calendar size={18} /></div>
+                                      <span className="font-medium">{req.donation_date}</span>
                                     </div>
                                 </div>
 
                                 <Link
                                     to={`/donation-requests/${req._id}`}
-                                    className="w-full btn h-auto py-5 bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-rose-600 dark:hover:bg-rose-600 dark:hover:text-white border-none rounded-2xl shadow-xl font-black text-xl flex items-center justify-center gap-4 transition-all group/btn"
+                                    className="btn btn-block h-auto py-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-red-600 dark:hover:bg-red-600 dark:hover:text-white border-none rounded-2xl shadow-lg font-bold text-lg transition-all group/btn"
                                 >
-                                    View Details
-                                    <ArrowRight className="transition-transform group-hover/btn:translate-x-2" size={24} />
+
+                                    Details 
+                                    <ArrowRight className="transition-transform group-hover/btn:translate-x-2" />
                                 </Link>
                             </div>
                         </Motion.div>

@@ -50,9 +50,9 @@ const SearchDonors = () => {
                     className="text-center mb-16"
                 >
                     <h2 className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white mb-4 tracking-tighter">
-                        FIND A <span className="text-rose-600">DONOR</span>
+                        FIND A <span className="text-red-600">DONOR</span>
                     </h2>
-                    <div className="h-1.5 w-24 bg-rose-600 mx-auto rounded-full mb-6"></div>
+                    <div className="h-1.5 w-24 bg-red-600 mx-auto rounded-full mb-6"></div>
                     <p className="text-lg text-gray-600 dark:text-gray-400 font-medium">
                         Search through our heroic community of verified blood donors.
                     </p>
@@ -61,7 +61,7 @@ const SearchDonors = () => {
                 <Motion.div 
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="bg-rose-50/50 dark:bg-gray-900 rounded-[2.5rem] shadow-2xl shadow-rose-100 dark:shadow-none border border-rose-100 dark:border-gray-800 p-8 md:p-12 mb-20"
+                    className="bg-red-50/50 dark:bg-gray-900 rounded-[2.5rem] shadow-2xl shadow-red-100 dark:shadow-none border border-red-100 dark:border-gray-800 p-8 md:p-12 mb-20"
                 >
                     <form onSubmit={handleSearch}>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -71,7 +71,7 @@ const SearchDonors = () => {
                                     value={searchData.blood_group}
                                     required
                                     onChange={(e) => setSearchData({ ...searchData, blood_group: e.target.value })}
-                                    className="select select-bordered w-full h-14 bg-rose-50/20 dark:bg-gray-950 border-rose-100 dark:border-gray-800 rounded-2xl focus:ring-2 focus:ring-rose-600 transition-all font-bold"
+                                    className="select select-bordered w-full h-14 bg-red-50/20 dark:bg-gray-950 border-red-100 dark:border-gray-800 rounded-2xl focus:ring-2 focus:ring-red-600 transition-all font-bold"
                                 >
                                     <option value="">Select Group</option>
                                     {["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"].map(bg => (
@@ -85,7 +85,7 @@ const SearchDonors = () => {
                                 <select
                                     value={searchData.district}
                                     onChange={(e) => setSearchData({ ...searchData, district: e.target.value })}
-                                    className="select select-bordered w-full h-14 bg-rose-50/20 dark:bg-gray-950 border-rose-100 dark:border-gray-800 rounded-2xl focus:ring-2 focus:ring-rose-600 transition-all font-bold"
+                                    className="select select-bordered w-full h-14 bg-red-50/20 dark:bg-gray-950 border-red-100 dark:border-gray-800 rounded-2xl focus:ring-2 focus:ring-red-600 transition-all font-bold"
                                 >
                                     <option value="">All Districts</option>
                                     {districts.map(d => <option key={d.id} value={d.name}>{d.name}</option>)}
@@ -97,7 +97,7 @@ const SearchDonors = () => {
                                 <select
                                     value={searchData.upazila}
                                     onChange={(e) => setSearchData({ ...searchData, upazila: e.target.value })}
-                                    className="select select-bordered w-full h-14 bg-rose-50/20 dark:bg-gray-950 border-rose-100 dark:border-gray-800 rounded-2xl focus:ring-2 focus:ring-rose-600 transition-all font-bold"
+                                    className="select select-bordered w-full h-14 bg-red-50/20 dark:bg-gray-950 border-red-100 dark:border-gray-800 rounded-2xl focus:ring-2 focus:ring-red-600 transition-all font-bold"
                                 >
                                     <option value="">All Upazilas</option>
                                     {upazilas.map(u => <option key={u.id} value={u.name}>{u.name}</option>)}
@@ -110,7 +110,7 @@ const SearchDonors = () => {
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 type="submit" 
-                                className="btn h-auto py-4 px-16 bg-rose-600 hover:bg-rose-700 text-white border-none rounded-2xl font-black text-xl shadow-xl shadow-rose-200 dark:shadow-none flex items-center gap-3 mx-auto"
+                                className="btn h-auto py-4 px-16 bg-red-600 hover:bg-red-700 text-white border-none rounded-2xl font-black text-xl shadow-xl shadow-red-200 dark:shadow-none flex items-center gap-3 mx-auto"
                             >
                                 <Search size={24} strokeWidth={3} />
                                 Start Search
@@ -130,21 +130,21 @@ const SearchDonors = () => {
                                     initial={{ opacity: 0, scale: 0.9 }}
                                     animate={{ opacity: 1, scale: 1 }}
                                     transition={{ delay: idx * 0.05 }}
-                                    className="group bg-rose-50/50 dark:bg-gray-900 rounded-[2.5rem] shadow-xl border border-rose-100 dark:border-gray-800 p-8 text-center hover:shadow-2xl transition-all hover:-translate-y-2 relative overflow-hidden"
+                                    className="group bg-red-50/50 dark:bg-gray-900 rounded-[2.5rem] shadow-xl border border-red-100 dark:border-gray-800 p-8 text-center hover:shadow-2xl transition-all hover:-translate-y-2 relative overflow-hidden"
                                 >
                                     <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
-                                        <Droplets size={120} className="text-rose-600" />
+                                        <Droplets size={120} className="text-red-600" />
                                     </div>
                                     
                                     <div className="relative mb-6">
-                                        <div className="w-32 h-32 mx-auto rounded-full p-1 bg-gradient-to-br from-rose-600 to-rose-400">
+                                        <div className="w-32 h-32 mx-auto rounded-full p-1 bg-gradient-to-br from-red-600 to-red-400">
                                             <img
                                                 src={donor.mainPhotoUrl || donor.image || "https://i.ibb.co/4pDNDk1/avatar.png"}
                                                 alt={donor.name}
                                                 className="w-full h-full rounded-full object-cover border-4 border-white dark:border-gray-800"
                                             />
                                         </div>
-                                        <div className="absolute -bottom-2 -right-2 bg-rose-600 text-white w-12 h-12 rounded-full border-4 border-white dark:border-gray-800 flex items-center justify-center font-black text-sm shadow-lg">
+                                        <div className="absolute -bottom-2 -right-2 bg-red-600 text-white w-12 h-12 rounded-full border-4 border-white dark:border-gray-800 flex items-center justify-center font-black text-sm shadow-lg">
                                             {donor.blood || donor.blood_group}
                                         </div>
                                     </div>
@@ -155,7 +155,7 @@ const SearchDonors = () => {
                                     
                                     <div className="space-y-3 mb-6">
                                         <div className="flex items-center justify-center gap-2 text-gray-600 dark:text-gray-400 font-bold">
-                                            <MapPin size={16} className="text-rose-600" />
+                                            <MapPin size={16} className="text-red-600" />
                                             {donor.district}, {donor.upazila}
                                         </div>
                                         <div className="flex items-center justify-center gap-2 text-gray-500 dark:text-gray-500 text-sm">
@@ -165,11 +165,12 @@ const SearchDonors = () => {
                                     </div>
 
                                     <div className="flex justify-center">
-                                        <div className="h-1 w-12 bg-rose-100 dark:bg-gray-700 rounded-full group-hover:w-24 group-hover:bg-rose-600 transition-all duration-500" />
+                                        <div className="h-1 w-12 bg-red-100 dark:bg-gray-700 rounded-full group-hover:w-24 group-hover:bg-red-600 transition-all duration-500" />
                                     </div>
                                 </Motion.div>
                             ))}
                         </div>
+
                     ) : hasSearched && (
                         <AnimatePresence>
                             <Motion.div 

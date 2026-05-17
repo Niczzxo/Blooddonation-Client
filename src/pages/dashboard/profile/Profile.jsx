@@ -5,7 +5,7 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import toast from "react-hot-toast";
 import Loading from "../../../components/common/Loading";
-import { Camera } from "lucide-react";
+import { FaCamera } from "react-icons/fa";
 import axios from "axios";
 
 const Profile = () => {
@@ -108,8 +108,8 @@ const Profile = () => {
 
   return (
     <div className="container mx-auto py-10 px-4">
-      <div className="max-w-5xl mx-auto bg-rose-50/50 dark:bg-gray-900 rounded-3xl shadow-2xl border border-rose-100 dark:border-gray-800 overflow-hidden">
-        <div className="bg-gradient-to-r from-rose-600 to-rose-700 p-10 text-center text-white">
+      <div className="max-w-5xl mx-auto bg-red-50/50 dark:bg-gray-900 rounded-3xl shadow-2xl border border-red-100 dark:border-gray-800 overflow-hidden">
+        <div className="bg-gradient-to-r from-red-600 to-red-700 p-10 text-center text-white">
           <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter">My Profile</h1>
           <p className="text-lg mt-3 opacity-90 font-medium">Update your hero information</p>
         </div>
@@ -118,7 +118,7 @@ const Profile = () => {
           <form onSubmit={handleSave} className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="flex flex-col items-center">
               <div className="relative group mb-8">
-                <div className="w-48 h-48 rounded-full overflow-hidden border-8 border-rose-500 shadow-2xl ring-8 ring-rose-100 dark:ring-gray-800">
+                <div className="w-48 h-48 rounded-full overflow-hidden border-8 border-red-500 shadow-2xl ring-8 ring-red-100 dark:ring-gray-800">
                   <img 
                     src={imagePreview} 
                     alt="Profile" 
@@ -133,8 +133,8 @@ const Profile = () => {
                       onChange={handleImageChange}
                       className="absolute inset-0 opacity-0 cursor-pointer"
                     />
-                    <div className="absolute bottom-4 right-4 bg-rose-600 hover:bg-rose-700 text-white p-4 rounded-full shadow-xl cursor-pointer transition-all hover:scale-110">
-                      <Camera className="text-2xl" />
+                    <div className="absolute bottom-4 right-4 bg-red-600 hover:bg-red-700 text-white p-4 rounded-full shadow-xl cursor-pointer transition-all hover:scale-110">
+                      <FaCamera className="text-2xl" />
                     </div>
                   </>
                 )}
@@ -143,7 +143,7 @@ const Profile = () => {
               <div className="text-center">
                 <h2 className="text-3xl font-black text-gray-900 dark:text-white uppercase tracking-tight">{profile.name}</h2>
                 <p className="text-xl text-gray-500 font-medium mt-2">{user?.email}</p>
-                <p className="badge badge-lg bg-rose-600 text-white border-none mt-4 py-6 px-8 text-2xl font-black shadow-lg shadow-rose-200 dark:shadow-none">{profile.blood}</p>
+                <p className="badge badge-lg bg-red-600 text-white border-none mt-4 py-6 px-8 text-2xl font-black shadow-lg shadow-red-200 dark:shadow-none">{profile.blood}</p>
               </div>
             </div>
 
@@ -155,7 +155,7 @@ const Profile = () => {
                   value={profile.name}
                   onChange={(e) => setProfile({ ...profile, name: e.target.value })}
                   readOnly={!editing}
-                  className="input input-bordered w-full text-lg h-14 bg-rose-50/20 dark:bg-gray-950 border-rose-100 dark:border-gray-800 rounded-2xl focus:ring-2 focus:ring-rose-600 transition-all font-bold"
+                  className="input input-bordered w-full text-lg h-14 bg-red-50/20 dark:bg-gray-950 border-red-100 dark:border-gray-800 rounded-2xl focus:ring-2 focus:ring-red-600 transition-all font-bold"
                   placeholder="Your name"
                 />
               </div>
@@ -176,7 +176,7 @@ const Profile = () => {
                   value={profile.blood}
                   onChange={(e) => setProfile({ ...profile, blood: e.target.value })}
                   disabled={!editing}
-                  className="select select-bordered w-full text-lg h-14 bg-rose-50/20 dark:bg-gray-950 border-rose-100 dark:border-gray-800 rounded-2xl focus:ring-2 focus:ring-rose-600 transition-all font-bold"
+                  className="select select-bordered w-full text-lg h-14 bg-red-50/20 dark:bg-gray-950 border-red-100 dark:border-gray-800 rounded-2xl focus:ring-2 focus:ring-red-600 transition-all font-bold"
                 >
                   <option value="">Select Blood Group</option>
                   {["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"].map(bg => (
@@ -192,7 +192,7 @@ const Profile = () => {
                     value={profile.district}
                     onChange={(e) => setProfile({ ...profile, district: e.target.value })}
                     disabled={!editing}
-                    className="select select-bordered w-full text-lg h-14 bg-rose-50/20 dark:bg-gray-950 border-rose-100 dark:border-gray-800 rounded-2xl focus:ring-2 focus:ring-rose-600 transition-all font-bold"
+                    className="select select-bordered w-full text-lg h-14 bg-red-50/20 dark:bg-gray-950 border-red-100 dark:border-gray-800 rounded-2xl focus:ring-2 focus:ring-red-600 transition-all font-bold"
                   >
                     <option value="">Select District</option>
                     {districts.map(d => <option key={d.id} value={d.name}>{d.name}</option>)}
@@ -205,7 +205,7 @@ const Profile = () => {
                     value={profile.upazila}
                     onChange={(e) => setProfile({ ...profile, upazila: e.target.value })}
                     disabled={!editing}
-                    className="select select-bordered w-full text-lg h-14 bg-rose-50/20 dark:bg-gray-950 border-rose-100 dark:border-gray-800 rounded-2xl focus:ring-2 focus:ring-rose-600 transition-all font-bold"
+                    className="select select-bordered w-full text-lg h-14 bg-red-50/20 dark:bg-gray-950 border-red-100 dark:border-gray-800 rounded-2xl focus:ring-2 focus:ring-red-600 transition-all font-bold"
                   >
                     <option value="">Select Upazila</option>
                     {upazilas.map(u => <option key={u.id} value={u.name}>{u.name}</option>)}
@@ -215,12 +215,12 @@ const Profile = () => {
 
               <div className="text-center pt-8">
                 {!editing ? (
-                  <button type="button" onClick={() => setEditing(true)} className="btn btn-lg bg-rose-600 hover:bg-rose-700 text-white border-none rounded-2xl px-16 font-black shadow-xl shadow-rose-200 dark:shadow-none transition-all hover:scale-105">
+                  <button type="button" onClick={() => setEditing(true)} className="btn btn-lg bg-red-600 hover:bg-red-700 text-white border-none rounded-2xl px-16 font-black shadow-xl shadow-red-200 dark:shadow-none transition-all hover:scale-105">
                     Edit Profile
                   </button>
                 ) : (
                   <div className="flex gap-4 justify-center">
-                    <button type="submit" className="btn btn-lg bg-rose-600 hover:bg-rose-700 text-white border-none rounded-2xl px-12 font-black shadow-xl shadow-rose-200 dark:shadow-none">
+                    <button type="submit" className="btn btn-lg bg-red-600 hover:bg-red-700 text-white border-none rounded-2xl px-12 font-black shadow-xl shadow-red-200 dark:shadow-none">
                       Save Changes
                     </button>
                     <button type="button" onClick={() => setEditing(false)} className="btn btn-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 border-none rounded-2xl px-12 font-black">

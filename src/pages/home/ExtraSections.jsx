@@ -1,301 +1,260 @@
 import { Link } from 'react-router';
-import { motion as Motion } from "motion/react";
-import { Droplets, HandHeart, UserPlus, Search, MessageSquarePlus, Activity, HelpCircle, Send } from "lucide-react";
 
 const ExtraSections = () => {
-    return (
-        <div className="space-y-32 mb-32">
+  return (
+    <div className="min-h-screen w-11/12 mx-auto my-20 text-base-content">
 
-            {/* Hero Section - Elite Visuals */}
-            <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-rose-600 dark:bg-rose-900/20 group">
-                {/* Abstract Background Shapes */}
-                <div className="absolute inset-0 z-0">
-                    <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-rose-500 rounded-full blur-[120px] opacity-20 animate-pulse"></div>
-                    <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-rose-400 rounded-full blur-[120px] opacity-20 animate-pulse duration-700"></div>
-                </div>
-                
-                <div className="container mx-auto px-6 relative z-10 text-center">
-                    <Motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                    >
-                        <h1 className="text-6xl md:text-9xl font-black text-white mb-8 tracking-tighter leading-none uppercase">
-                            DONATE <span className="text-rose-200 decoration-8 underline underline-offset-8">BLOOD</span>
-                            <br />
-                            SAVE <span className="text-white">LIVES</span>
-                        </h1>
-                        <p className="text-xl md:text-3xl text-rose-100 dark:text-rose-200/80 mb-12 max-w-3xl mx-auto font-medium leading-relaxed italic">
-                            Every drop you share is a pulse that keeps a heart beating. <br className="hidden md:block" /> Be the hero someone is praying for.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                            <Link 
-                                to="/register" 
-                                className="btn h-auto py-5 px-12 bg-white text-rose-700 hover:bg-rose-50 border-none rounded-[2rem] font-black text-xl shadow-2xl shadow-rose-900/40 transition-all hover:scale-110 active:scale-95"
-                            >
-                                <HandHeart className="text-2xl" />
-                                Start Donating
-                            </Link>
-                            <Link 
-                                to="/donation-requests" 
-                                className="btn h-auto py-5 px-12 bg-transparent text-white hover:bg-white/10 border-4 border-white/30 rounded-[2rem] font-black text-xl transition-all hover:scale-110 active:scale-95"
-                            >
-                                <Search className="text-xl" />
-                                Search Donors
-                            </Link>
-                        </div>
-                    </Motion.div>
-                </div>
-            </section>
-
-            {/* Quick Statistics - Glassmorphism */}
-            <section className="container mx-auto px-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {[
-                        { label: "Total Donors", value: "12,580+", suffix: "Heroic Souls", icon: UserPlus, color: "rose" },
-                        { label: "Lives Saved", value: "45,000+", suffix: "Happy Families", icon: HandHeart, color: "blue" },
-                        { label: "Requests", value: "8,720+", suffix: "Fulfilled Daily", icon: HandHeart, color: "emerald" },
-                        { label: "Campaigns", value: "150+", suffix: "Active Weekly", icon: Activity, color: "amber" },
-                    ].map((stat, i) => (
-                        <Motion.div
-                            key={i}
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: i * 0.1 }}
-                            className="bg-white dark:bg-gray-900/50 rounded-[2.5rem] p-10 border border-rose-100 dark:border-gray-800 shadow-xl hover:shadow-2xl transition-all group"
-                        >
-                            <div className={`w-16 h-16 rounded-2xl bg-rose-100 dark:bg-gray-800 flex items-center justify-center text-rose-600 mb-8 shadow-inner group-hover:scale-110 transition-transform`}>
-                                <stat.icon size={28} />
-                            </div>
-                            <h3 className="text-4xl font-black text-gray-900 dark:text-white mb-2 tracking-tighter">{stat.value}</h3>
-                            <p className="text-xs font-black uppercase tracking-widest text-rose-600 mb-4">{stat.label}</p>
-                            <p className="text-sm text-gray-500 font-bold">{stat.suffix}</p>
-                        </Motion.div>
-                    ))}
-                </div>
-            </section>
-
-            {/* Steps - How It Works */}
-            <section className="container mx-auto px-6 overflow-hidden">
-                <div className="flex flex-col md:flex-row items-end justify-between gap-8 mb-16 px-4">
-                    <div className="max-w-2xl">
-                        <h2 className="text-5xl md:text-7xl font-black text-gray-900 dark:text-white uppercase tracking-tighter leading-none mb-4">
-                            SIMPLE <span className="text-rose-600">PROCESS</span>
-                        </h2>
-                        <p className="text-xl text-gray-500 font-medium italic">Saving a life shouldn't be complicated. Here's how we do it.</p>
-                    </div>
-                    <div className="h-1 bg-rose-600 w-32 rounded-full mb-4 md:mb-6"></div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-0">
-                    {[
-                        { step: "01", title: "Join Us", desc: "Create your unique donor profile in seconds.", icon: UserPlus },
-                        { step: "02", title: "Find Needs", desc: "Search for urgent blood requests nearby.", icon: Search },
-                        { step: "03", title: "Connect", desc: "Live chat with recipients and confirm.", icon: HandHeart },
-                        { step: "04", title: "Donate", desc: "Make your donation and save a life.", icon: HandHeart },
-                    ].map((item, i) => (
-                        <Motion.div
-                            key={i}
-                            initial={{ opacity: 0, x: 20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: i * 0.1 }}
-                            className="relative group p-10 md:p-12 bg-rose-50/30 dark:bg-gray-900/30 border-b md:border-b-0 md:border-r border-rose-100 dark:border-gray-800 last:border-0 hover:bg-rose-100/50 dark:hover:bg-gray-900 transition-all cursor-default"
-                        >
-                            <span className="text-8xl font-black text-rose-100 dark:text-gray-800 absolute top-4 right-4 z-0 group-hover:scale-125 transition-transform duration-700 group-hover:text-rose-200 dark:group-hover:text-gray-700">{item.step}</span>
-                            <div className="relative z-10">
-                                <div className="w-12 h-12 rounded-xl bg-rose-600 text-white flex items-center justify-center mb-8 shadow-xl shadow-rose-200 dark:shadow-none">
-                                    <item.icon />
-                                </div>
-                                <h3 className="text-2xl font-black text-gray-900 dark:text-white uppercase tracking-tighter mb-4">{item.title}</h3>
-                                <p className="text-gray-500 dark:text-gray-400 font-medium leading-relaxed">{item.desc}</p>
-                            </div>
-                        </Motion.div>
-                    ))}
-                </div>
-            </section>
-
-            {/* Blood Types & Compatibility - Premium Table */}
-            <section className="bg-gray-50 dark:bg-gray-950 py-32 border-y border-rose-100 dark:border-gray-800">
-                <div className="container mx-auto px-6">
-                    <div className="text-center mb-20">
-                        <h2 className="text-5xl md:text-8xl font-black text-gray-900 dark:text-white uppercase tracking-tighter mb-6 leading-none">
-                            BLOOD <span className="text-rose-600">COMPATIBILITY</span>
-                        </h2>
-                        <div className="h-2 w-32 bg-rose-600 mx-auto rounded-full"></div>
-                    </div>
-
-                    <div className="max-w-5xl mx-auto overflow-hidden rounded-[3rem] shadow-3xl border border-rose-100 dark:border-gray-800 bg-white dark:bg-gray-900">
-                        <table className="table w-full border-collapse">
-                            <thead>
-                                <tr className="bg-rose-600 text-white border-none">
-                                    <th className="py-10 px-12 text-xl font-black uppercase tracking-[0.2em] text-left">Your Type</th>
-                                    <th className="py-10 px-12 text-xl font-black uppercase tracking-[0.2em] text-left">Can Receive From</th>
-                                    <th className="py-10 px-12 text-xl font-black uppercase tracking-[0.2em] text-left">Can Donate To</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-rose-50 dark:divide-gray-800">
-                                {[
-                                    { type: "O-", receive: "O-", donate: "Everyone (Universal Donor)" },
-                                    { type: "O+", receive: "O+, O-", donate: "O+, A+, B+, AB+" },
-                                    { type: "A-", receive: "A-, O-", donate: "A+, A-, AB+, AB-" },
-                                    { type: "A+", receive: "A+, A-, O+, O-", donate: "A+, AB+" },
-                                    { type: "B-", receive: "B-, O-", donate: "B+, B-, AB+, AB-" },
-                                    { type: "B+", receive: "B+, B-, O+, O-", donate: "B+, AB+" },
-                                    { type: "AB-", receive: "AB-, A-, B-, O-", donate: "AB+, AB-" },
-                                    { type: "AB+", receive: "Everyone", donate: "AB+ (Universal Recipient)" },
-                                ].map((item, i) => (
-                                    <tr key={i} className="hover:bg-rose-50 dark:hover:bg-gray-800/50 transition-colors">
-                                        <td className="py-8 px-12">
-                                            <div className="w-16 h-16 bg-rose-100 dark:bg-rose-900/40 rounded-2xl flex items-center justify-center text-3xl font-black text-rose-600 shadow-inner ring-4 ring-rose-100/20">{item.type}</div>
-                                        </td>
-                                        <td className="py-8 px-12 font-bold text-gray-800 dark:text-gray-200 text-lg uppercase tracking-tight">{item.receive}</td>
-                                        <td className="py-8 px-12 font-bold text-gray-800 dark:text-gray-200 text-lg uppercase tracking-tight">{item.donate}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </section>
-
-            {/* Testimonials - Mosaic Layout */}
-            <section className="container mx-auto px-6">
-                <div className="flex flex-col items-center text-center mb-20">
-                    <span className="text-xs font-black uppercase tracking-[0.4em] text-rose-600 mb-6 px-1">Success Stories</span>
-                    <h2 className="text-5xl md:text-7xl font-black text-gray-900 dark:text-white uppercase tracking-tighter leading-none mb-8">
-                        LIVES WE&apos;VE <span className="text-rose-600 underline decoration-rose-200">CHANGED</span>
-                    </h2>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {[
-                        { name: "Rakib Hossain", role: "Volunteer Donor", quote: "My first donation was nervous, but knowing it save 2 lives made it the most amazing feeling in the world." },
-                        { name: "Fatema Khatun", role: "Mother & Recipient", quote: "We found blood in time through this platform when everything seemed lost. It gave my family a second chance." },
-                        { name: "Saiful Islam", role: "Elite Member", quote: "RedPulse has transformed how our community views blood donation. It&apos;s now a way of life for all of us." },
-                    ].map((t, i) => (
-                        <Motion.div
-                            key={i}
-                            whileHover={{ y: -10 }}
-                            className="p-12 rounded-[3rem] bg-rose-50/50 dark:bg-gray-900 border border-rose-100 dark:border-gray-800 shadow-xl group"
-                        >
-                            <div className="flex gap-1 mb-8 text-rose-600">
-                                {[1,2,3,4,5].map(s => <span key={s}>★</span>)}
-                            </div>
-                            <p className="text-xl italic font-bold text-gray-800 dark:text-gray-200 mb-10 leading-relaxed font-sans group-hover:text-rose-600 transition-colors">
-                                &ldquo;{t.quote}&rdquo;
-                            </p>
-                            <div className="flex items-center gap-4">
-                                <div className="w-14 h-14 bg-rose-600 rounded-2xl flex items-center justify-center text-white font-black text-xl">{t.name.charAt(0)}</div>
-                                <div>
-                                    <h4 className="font-black text-gray-900 dark:text-white uppercase tracking-tight">{t.name}</h4>
-                                    <p className="text-xs font-bold text-gray-500 uppercase tracking-widest">{t.role}</p>
-                                </div>
-                            </div>
-                        </Motion.div>
-                    ))}
-                </div>
-            </section>
-
-            {/* FAQ - Modern Accordion */}
-            <section className="bg-rose-600 dark:bg-rose-950 py-32 overflow-hidden relative">
-                {/* Decorative Pattern */}
-                <div className="absolute inset-0 opacity-10 pointer-events-none select-none overflow-hidden">
-                    {Array.from({length: 20}).map((_, i) => (
-                        <div key={i} className="absolute text-white font-black text-9xl uppercase tracking-tighter opacity-10 whitespace-nowrap" style={{
-                            top: `${i * 10}%`,
-                            left: `${(i % 2) * -50}%`,
-                            animation: `marquee ${20 + i * 5}s linear infinite`
-                        }}>QUESTIONS QUESTIONS QUESTIONS QUESTIONS</div>
-                    ))}
-                </div>
-
-                <div className="container mx-auto px-6 relative z-10 max-w-4xl">
-                    <div className="text-center mb-16">
-                        <HelpCircle className="text-white text-6xl mx-auto mb-8 animate-bounce" />
-                        <h2 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter mb-4">GOT QUESTIONS?</h2>
-                        <p className="text-rose-100 font-bold uppercase tracking-widest">Everything you need to know before you donate</p>
-                    </div>
-
-                    <div className="space-y-4">
-                        {[
-                            { q: "What are the eligibility criteria for blood donation?", a: "You must be between 18-65 years old, weigh at least 50kg, and be in good general health without recent illnesses." },
-                            { q: "How often can I donate blood safely?", a: "Men can donate every 3 months, and women can donate every 4 months to allow the body to replenish iron stores." },
-                            { q: "Is the blood donation process painful or unsafe?", a: "Not at all. We use sterile, disposable equipment for every donation, and you'll only feel a quick pinch." },
-                        ].map((item, i) => (
-                            <div key={i} className="collapse collapse-plus bg-white/10 backdrop-blur-xl border border-white/20 text-white rounded-3xl group">
-                                <input type="radio" name="faq-accordion" defaultChecked={i === 0} className="peer" />
-                                <div className="collapse-title text-2xl font-black uppercase tracking-tight py-8 px-10 group-hover:bg-white/5 transition-colors peer-checked:text-rose-200">
-                                    {item.q}
-                                </div>
-                                <div className="collapse-content px-10 pb-8">
-                                    <p className="text-lg font-bold text-rose-100/90 leading-relaxed max-w-2xl">{item.a}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Newsletter - Elite Call to Action */}
-            <section className="container mx-auto px-6">
-                <div className="bg-rose-50/50 dark:bg-gray-900 rounded-[3rem] p-12 md:p-24 border border-rose-100 dark:border-gray-800 relative overflow-hidden group">
-                    <div className="absolute bottom-0 right-0 p-20 opacity-5 -rotate-12 group-hover:scale-110 transition-transform duration-1000">
-                        <HandHeart size={400} />
-                    </div>
-                    
-                    <div className="relative z-10 max-w-3xl">
-                        <span className="text-xs font-black uppercase tracking-[0.5em] text-rose-600 mb-6 block">Stay Informed</span>
-                        <h2 className="text-5xl md:text-8xl font-black text-gray-900 dark:text-white uppercase tracking-tighter leading-none mb-10">
-                            NEVER MISS <br /> <span className="text-rose-600">AN UPDATE</span>
-                        </h2>
-                        <p className="text-xl md:text-2xl text-gray-500 font-bold mb-16 italic">Join our list for urgent alerts, community campaigns, and expert donation tips.</p>
-                        
-                        <form className="flex flex-col sm:flex-row gap-6" onSubmit={e => e.preventDefault()}>
-                            <input 
-                                type="email" 
-                                placeholder="Enter your elite email"
-                                className="flex-1 h-20 bg-white dark:bg-gray-950 border border-rose-100 dark:border-gray-800 rounded-3xl px-10 font-bold text-xl focus:outline-none focus:ring-4 focus:ring-rose-500/20 transition-all shadow-xl dark:shadow-none"
-                            />
-                            <button className="h-20 px-12 bg-rose-600 hover:bg-rose-700 text-white rounded-3xl font-black uppercase tracking-widest flex items-center gap-4 transition-all hover:scale-105 active:scale-95 shadow-xl shadow-rose-200 dark:shadow-none">
-                                Subscribe
-                                <Send />
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </section>
-
-            {/* Final Call to Action */}
-            <section className="py-40 text-center relative overflow-hidden">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-rose-50 dark:bg-rose-950/20 blur-[150px] opacity-20 animate-pulse"></div>
-                <div className="container mx-auto px-6 relative z-10">
-                    <h2 className="text-7xl md:text-[10rem] font-black text-gray-900 dark:text-white uppercase tracking-tighter leading-none mb-12">
-                        EVERY <span className="text-rose-600">DROP</span> <br /> COUNTS
-                    </h2>
-                    <p className="text-2xl md:text-3xl text-gray-500 font-medium mb-20 max-w-2xl mx-auto italic leading-relaxed">
-                        Be the reason someone smiles today. Join the REDPULSE community and ignite the chain of life.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-8 justify-center">
-                        <Link 
-                            to="/register" 
-                            className="btn h-auto py-6 px-16 bg-rose-600 hover:bg-rose-700 text-white border-none rounded-[2.5rem] font-black text-2xl shadow-3xl shadow-rose-200 dark:shadow-none transition-all hover:scale-110 active:scale-95 flex items-center gap-4"
-                        >
-                            Become a Hero
-                            <Motion.span animate={{ scale: [1, 1.2, 1] }} transition={{ repeat: Infinity, duration: 1 }}>❤️</Motion.span>
-                        </Link>
-                        <Link 
-                            to="/donation-requests" 
-                            className="btn h-auto py-6 px-16 bg-transparent text-gray-900 dark:text-white hover:bg-rose-50 border-4 border-rose-600 rounded-[2.5rem] font-black text-2xl transition-all hover:scale-110 active:scale-95"
-                        >
-                            Request Aid
-                        </Link>
-                    </div>
-                </div>
-            </section>
+      {/* Hero Section - Strong Red Vibe */}
+      <section className="hero min-h-[60vh] md:min-h-[70vh] bg-gradient-to-br from-red-600 via-red-700 to-red-600 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20 pointer-events-none">
+          <div className="absolute top-10 left-10 text-red-300 text-9xl">🩸</div>
+          <div className="absolute bottom-20 right-20 text-red-400 text-8xl rotate-12">🩸</div>
+          <div className="absolute top-1/3 right-1/4 text-red-300 text-7xl -rotate-6">🩸</div>
         </div>
-    );
+        <div className="hero-content text-center z-10">
+          <div className="max-w-4xl">
+            <h1 className="text-5xl md:text-7xl font-extrabold mb-6 drop-shadow-2xl animate-fade-in-down">
+              DONATE <span className="text-red-200">BLOOD</span>
+              <br />
+              SAVE <span className="text-red-200">LIVES</span>
+            </h1>
+            <p className="text-xl md:text-3xl mb-10 animate-fade-in-up animation-delay-200">
+              One drop of blood can save a life — Join us today!
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Link to="/register" className="btn btn-lg bg-white text-red-700 hover:bg-gray-100 font-bold shadow-xl hover:shadow-red-900/50 transition-all animate-fade-in-up animation-delay-300">
+                Become a Donor
+              </Link>
+              <Link to="/donation-requests" className="btn btn-lg btn-outline border-white text-white hover:bg-white hover:text-red-600 transition-all animate-fade-in-up animation-delay-400">
+                Find Blood
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Statistics */}
+      <section className="py-16 bg-red-50 dark:bg-red-950">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12 text-red-600 dark:text-red-300 animate-fade-in-down">Our Impact</h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="stats shadow-lg bg-red-50/50 dark:bg-gray-900 border border-red-100 dark:border-gray-800 animate-fade-in-up animation-delay-100">
+              <div className="stat place-items-center">
+                <div className="stat-title text-red-600 dark:text-red-400">Total Donors</div>
+                <div className="stat-value text-red-700 dark:text-red-300">12,580+</div>
+              </div>
+            </div>
+            <div className="stats shadow-lg bg-red-50/50 dark:bg-gray-900 border border-red-100 dark:border-gray-800 animate-fade-in-up animation-delay-200">
+              <div className="stat place-items-center">
+                <div className="stat-title text-red-600 dark:text-red-400">Lives Saved</div>
+                <div className="stat-value text-red-700 dark:text-red-300">45,000+</div>
+              </div>
+            </div>
+            <div className="stats shadow-lg bg-red-50/50 dark:bg-gray-900 border border-red-100 dark:border-gray-800 animate-fade-in-up animation-delay-300">
+              <div className="stat place-items-center">
+                <div className="stat-title text-red-600 dark:text-red-400">Requests Fulfilled</div>
+                <div className="stat-value text-red-700 dark:text-red-300">8,720+</div>
+              </div>
+            </div>
+            <div className="stats shadow-lg bg-red-50/50 dark:bg-gray-900 border border-red-100 dark:border-gray-800 animate-fade-in-up animation-delay-400">
+              <div className="stat place-items-center">
+                <div className="stat-title text-red-600 dark:text-red-400">Active Campaigns</div>
+                <div className="stat-value text-red-700 dark:text-red-300">150+</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12 text-red-600 dark:text-red-300 animate-fade-in-down">How It Works</h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {[
+              { step: 1, title: "Register", desc: "Create your donor profile" },
+              { step: 2, title: "Search / Request", desc: "Find donors or post requests" },
+              { step: 3, title: "Connect", desc: "Contact the donor/recipient" },
+              { step: 4, title: "Save a Life", desc: "Donate and make a difference" },
+            ].map((item, index) => (
+              <div key={item.step} className="card bg-red-50/50 dark:bg-gray-900 shadow-xl border border-red-100 dark:border-gray-800 animate-fade-in-up" style={{animationDelay: `${index * 0.1}s`}}>
+                <div className="card-body items-center text-center">
+                  <div className="badge badge-lg bg-red-600 text-white mb-4 animate-scale-in">{item.step}</div>
+                  <h3 className="card-title text-red-700 dark:text-red-300">{item.title}</h3>
+                  <p className="text-gray-700 dark:text-gray-300">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Urgent Blood Requests Teaser */}
+      <section className="py-16 bg-red-50 dark:bg-red-950">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-between items-center mb-8">
+            <h2 className="text-4xl font-bold text-red-600 dark:text-red-300 animate-fade-in-left">Urgent Blood Requests</h2>
+            <Link to="/donation-requests" className="btn bg-red-600 text-white hover:bg-red-700 animate-fade-in-right">View All</Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {[1, 2, 3, 4].map((i) => (
+              <div key={i} className="card bg-red-50/50 dark:bg-gray-900 shadow-xl border border-red-100 dark:border-gray-800 animate-fade-in-up" style={{animationDelay: `${(i-1) * 0.15}s`}}>
+                <div className="card-body">
+                  <div className="badge bg-red-600 text-white text-xl mb-2">A+</div>
+                  <h3 className="card-title text-red-700 dark:text-red-300">Urgent A+ Blood Needed</h3>
+                  <p className="text-gray-700 dark:text-gray-300">Barishal Medical College Hospital</p>
+                  <div className="card-actions justify-end mt-4">
+                    <Link to={`/request/${i}`} className="btn btn-outline border-red-600 text-red-600 hover:bg-red-600 hover:text-white">Details</Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Become a Donor CTA */}
+      <section className="py-20 bg-red-600 text-white text-center">
+        <div className="container mx-auto px-4">
+          <h2 className="text-5xl font-bold mb-6 animate-fade-in-down">Become a Donor Today</h2>
+          <p className="text-xl mb-10 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
+            Your blood can save someone's life. One donation can make a huge impact!
+          </p>
+          <Link to="/register" className="btn btn-lg bg-white text-red-700 hover:bg-gray-100 animate-fade-in-up animation-delay-300">
+            Join Now
+          </Link>
+        </div>
+      </section>
+
+      {/* Blood Types & Compatibility */}
+      <section className="py-24">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl md:text-6xl font-black text-center mb-12 text-red-600 dark:text-red-500 uppercase tracking-tighter animate-fade-in-down">
+            Blood Types & <span className="text-gray-900 dark:text-white">Compatibility</span>
+          </h2>
+          <div className="overflow-x-auto rounded-[2.5rem] shadow-2xl border border-red-100 dark:border-gray-800 animate-fade-in-up">
+            <table className="table w-full">
+              <thead className="bg-red-600 text-white border-none">
+                <tr className="border-none">
+                  <th className="py-8 px-10 text-xl font-black uppercase tracking-widest text-left">Your Blood Type</th>
+                  <th className="py-8 px-10 text-xl font-black uppercase tracking-widest text-left">Can Receive From</th>
+                  <th className="py-8 px-10 text-xl font-black uppercase tracking-widest text-left">Can Donate To</th>
+                </tr>
+              </thead>
+              <tbody className="bg-red-50/30 dark:bg-gray-950">
+                <tr className="border-red-100 dark:border-gray-800 hover:bg-red-100/50 dark:hover:bg-gray-900 transition-colors">
+                  <td className="py-6 px-10 font-black text-2xl text-red-600">A+</td>
+                  <td className="py-6 px-10 font-bold text-lg text-gray-700 dark:text-gray-300">A+, A-, O+, O-</td>
+                  <td className="py-6 px-10 font-bold text-lg text-gray-700 dark:text-gray-300">A+, AB+</td>
+                </tr>
+                <tr className="bg-red-50/50 dark:bg-gray-900/50 border-red-100 dark:border-gray-800 hover:bg-red-100/50 dark:hover:bg-gray-900 transition-colors">
+                  <td className="py-6 px-10 font-black text-2xl text-red-600">A-</td>
+                  <td className="py-6 px-10 font-bold text-lg text-gray-700 dark:text-gray-300">A-, O-</td>
+                  <td className="py-6 px-10 font-bold text-lg text-gray-700 dark:text-gray-300">A+, A-, AB+, AB-</td>
+                </tr>
+                <tr className="border-red-100 dark:border-gray-800 hover:bg-red-100/50 dark:hover:bg-gray-900 transition-colors">
+                  <td className="py-6 px-10 font-black text-2xl text-red-600">B+</td>
+                  <td className="py-6 px-10 font-bold text-lg text-gray-700 dark:text-gray-300">B+, B-, O+, O-</td>
+                  <td className="py-6 px-10 font-bold text-lg text-gray-700 dark:text-gray-300">B+, AB+</td>
+                </tr>
+                <tr className="bg-red-50/50 dark:bg-gray-900/50 border-red-100 dark:border-gray-800 hover:bg-red-100/50 dark:hover:bg-gray-900 transition-colors">
+                  <td className="py-6 px-10 font-black text-2xl text-red-600">O-</td>
+                  <td className="py-6 px-10 font-bold text-lg text-gray-700 dark:text-gray-300">O-</td>
+                  <td className="py-6 px-10 font-bold text-lg text-gray-700 dark:text-gray-300">Everyone <span className="text-xs opacity-60 uppercase font-black">(Universal Donor)</span></td>
+                </tr>
+                <tr className="border-red-100 dark:border-gray-800 hover:bg-red-100/50 dark:hover:bg-gray-900 transition-colors">
+                  <td className="py-6 px-10 font-black text-2xl text-red-600">AB+</td>
+                  <td className="py-6 px-10 font-bold text-lg text-gray-700 dark:text-gray-300">All types</td>
+                  <td className="py-6 px-10 font-bold text-lg text-gray-700 dark:text-gray-300">AB+</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-16 bg-red-50 dark:bg-red-950">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12 text-red-600 dark:text-red-300 animate-fade-in-down">Success Stories</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { name: "Rakib Hossain", quote: "My donation saved 2 lives. It feels amazing!" },
+              { name: "Fatema Khatun", quote: "We found blood in time — thank you all!" },
+              { name: "Saiful Islam", quote: "Regular donation has become part of my life." },
+            ].map((t, i) => (
+              <div key={i} className="card bg-red-50/50 dark:bg-gray-900 shadow-xl border border-red-100 dark:border-gray-800 animate-fade-in-up" style={{animationDelay: `${i * 0.15}s`}}>
+                <div className="card-body">
+                  <p className="italic text-gray-700 dark:text-gray-300">"{t.quote}"</p>
+                  <div className="font-bold mt-4 text-red-700 dark:text-red-300">- {t.name}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12 text-red-600 dark:text-red-300">Frequently Asked Questions</h2>
+          <div className="join join-vertical w-full">
+            <div className="collapse collapse-arrow join-item border border-red-200 dark:border-red-700">
+              <input type="radio" name="my-accordion-1" defaultChecked />
+              <div className="collapse-title text-xl font-medium text-red-700 dark:text-red-300">What are the eligibility criteria for blood donation?</div>
+              <div className="collapse-content">
+                <p>Age 18–65, weight 50kg+, good health, no recent illness...</p>
+              </div>
+            </div>
+            <div className="collapse collapse-arrow join-item border border-red-200 dark:border-red-700">
+              <input type="radio" name="my-accordion-1" />
+              <div className="collapse-title text-xl font-medium text-red-700 dark:text-red-300">How often can I donate blood?</div>
+              <div className="collapse-content">
+                <p>Men: every 3 months, Women: every 4 months...</p>
+              </div>
+            </div>
+            <div className="collapse collapse-arrow join-item border border-red-200 dark:border-red-700">
+              <input type="radio" name="my-accordion-1" />
+              <div className="collapse-title text-xl font-medium text-red-700 dark:text-red-300">Is donating blood safe?</div>
+              <div className="collapse-content">
+                <p>Yes — new sterile equipment is used every time.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter Signup */}
+      <section className="py-16 bg-red-600 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold mb-6">Stay Updated</h2>
+          <p className="text-xl mb-8">Get alerts for urgent requests, campaigns, and tips</p>
+          <div className="join max-w-md mx-auto">
+            <input
+              type="email"
+              placeholder="Your email address"
+              className="input input-bordered join-item w-full max-w-xs bg-white text-gray-900"
+            />
+            <button className="btn bg-red-600 hover:bg-red-700 join-item text-white">Subscribe</button>
+          </div>
+        </div>
+      </section>
+
+      {/* Final Call to Action */}
+      <section className="py-20 text-center bg-red-50 dark:bg-red-950">
+        <div className="container mx-auto px-4">
+          <h2 className="text-5xl font-bold mb-6 text-red-600 dark:text-red-300">Every Drop Counts</h2>
+          <p className="text-xl mb-10 max-w-3xl mx-auto text-gray-700 dark:text-gray-300">
+            Be the reason someone smiles today. Join the BloodSync community and help save lives.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Link to="/register" className="btn btn-lg bg-red-600 text-white hover:bg-red-700">Donate Now</Link>
+            <Link to="/donation-requests" className="btn btn-lg btn-outline border-red-600 text-red-600 hover:bg-red-600 hover:text-white">Request Blood</Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
 };
 
 export default ExtraSections;

@@ -79,7 +79,7 @@ const Funding = () => {
           </form>
         </div>
         <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
-          <div className="bg-gradient-to-r from-red-600 to-rose-600 p-8 text-center">
+          <div className="bg-gradient-to-r from-red-600 to-red-700 p-8 text-center">
             <h2 className="text-4xl font-bold text-white">Funding History</h2>
             <p className="text-xl text-white/90 mt-3">Thank you to all our generous donors ❤️</p>
           </div>

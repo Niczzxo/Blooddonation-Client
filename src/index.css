@@ -6,13 +6,22 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Outfit", var(--font-sans);
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-red-50: #fff5f5;
+  --color-red-100: #ffe3e3;
+  --color-red-200: #ffc9c9;
+  --color-red-300: #ffa8a8;
+  --color-red-400: #ff8787;
+  --color-red-500: #ff3333;
+  --color-red-600: #ff0000; /* Pure Vibrant Red */
+  --color-red-700: #e60000;
+  --color-red-800: #cc0000;
+  --color-red-900: #b30000;
 }
-
-@custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
   body {
-    @apply font-sans text-gray-900 bg-white dark:bg-gray-950 dark:text-gray-100 transition-colors duration-300 min-h-screen;
+    @apply font-sans text-gray-900 bg-red-50/20 dark:bg-gray-950 dark:text-gray-100 transition-colors duration-300 min-h-screen;
   }
   
   h1, h2, h3, h4, h5, h6 {
